@@ -18,12 +18,12 @@ struct JourneyStepRow: View {
                 
                 Text("170 yd")
                     .font(.headline)
-                Text("Name")
+                Text(step.placemarkName)
                     .font(.subheadline)
                 Divider()
             }
         }
-        .padding(.horizontal)
+        .containerRelativeFrame(.vertical, count: 4, spacing: 10.0)
     }
 }
 

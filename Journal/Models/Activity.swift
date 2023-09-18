@@ -22,11 +22,41 @@ class Activity {
     // MARK: - Relationships
     var steps: [Step]? = []
     var trip: Trip?
+    @Relationship(inverse: \Activity.suceedingActivity)
+    var proceedingActivity: Activity?
+    var suceedingActivity: Activity?
     
+    // MARK: - Computed Properties
+    var activitySteps: [Step] {
+        var journeySteps = steps ?? []
+        
+        if activityType == .journey {
+            if let proceedingActivityStep = proceedingActivity?.steps?.first {
+                journeySteps.append(proceedingActivityStep)
+            }
+            
+            if let succeedingActivityStep = suceedingActivity?.steps?.first {
+                journeySteps.append(succeedingActivityStep)
+            }
+        }
+        return journeySteps.sorted()
+    }
+    
+    var debugDescription: String {
+        return "activity type: \(activityType), start date: \(startDate), steps: \(String(describing: steps))"
+    }
+    
+    // MARK: - Initialization
     init(startDate: Date, endDate: Date, activityType: ActivityType) {
         self.startDate = startDate
         self.endDate = endDate
         self.activityType = activityType
+    }
+}
+
+extension Activity: Comparable {
+    static func < (lhs: Activity, rhs: Activity) -> Bool {
+        lhs.startDate < rhs.startDate
     }
 }
 
