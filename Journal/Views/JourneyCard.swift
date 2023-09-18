@@ -11,13 +11,16 @@ struct JourneyCard: View {
     let activity: Activity
     
     var body: some View {
-        List {
-            ForEach(activity.steps ?? []) { step in
-                NavigationLink(value: step) {
-                    Text(step.timestamp, style: .time)
+        ScrollView {
+            LazyVStack {
+                ForEach(activity.steps ?? []) { step in
+                    NavigationLink(value: step) {
+                        JourneyStepRow(step: step)
+                    }
                 }
             }
         }
+        .background(.regularMaterial)
         .scrollViewCardStyle(aspectRatio: 1.5, cornerRadius: 25.0, count: 1, spacing: 10)
         .navigationDestination(for: Step.self) { step in
             Text(step.timestamp, style: .time)

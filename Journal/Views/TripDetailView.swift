@@ -23,10 +23,10 @@ struct TripDetailView: View {
                                 }
                             }
                         }
-                        .frame(height: geometry.size.width / 1.5)
-                        .navigationDestination(for: Activity.self) { activity in
-                            ActivityView(activity: activity)
-                        }
+                    }
+                    .frame(height: geometry.size.width / 1.5)
+                    .navigationDestination(for: Activity.self) { activity in
+                        ActivityView(activity: activity)
                     }
             }
         }

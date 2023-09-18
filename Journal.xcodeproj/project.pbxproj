@@ -25,6 +25,7 @@
 		78D1A7E02AB790E60087172B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7DF2AB790E60087172B /* ActivityView.swift */; };
 		78D1A7E22AB7920C0087172B /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7E12AB7920C0087172B /* TripDetailView.swift */; };
 		78D1A7E42AB7966A0087172B /* ModelContainerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7E32AB7966A0087172B /* ModelContainerPreview.swift */; };
+		78EEF8202AB86F930009D3DD /* JourneyStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		78D1A7DF2AB790E60087172B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		78D1A7E12AB7920C0087172B /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		78D1A7E32AB7966A0087172B /* ModelContainerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerPreview.swift; sourceTree = "<group>"; };
+		78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyStepRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				780A805B2AB7A1A200443302 /* TripCard.swift */,
 				780A805D2AB7A26C00443302 /* VisitCard.swift */,
 				780A805F2AB7A2F700443302 /* JourneyCard.swift */,
+				78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */,
 				78D1A7D22AB78EE40087172B /* DateFormatter+Extension.swift in Sources */,
 				780A805A2AB7A10400443302 /* View+Extension.swift in Sources */,
+				78EEF8202AB86F930009D3DD /* JourneyStepRow.swift in Sources */,
 				78D1A7DC2AB78F110087172B /* PreviewContainer.swift in Sources */,
 				780A805C2AB7A1A200443302 /* TripCard.swift in Sources */,
 				78D1A7D42AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift in Sources */,

@@ -21,9 +21,9 @@ struct TripView: View {
                         }
                     }
                 }
-                .navigationDestination(for: Trip.self) { trip in
-                    TripDetailView(trip: trip)
-                }
+            }
+            .navigationDestination(for: Trip.self) { trip in
+                TripDetailView(trip: trip)
             }
         }
     }
