@@ -13,15 +13,17 @@ struct TripView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(trips) { trip in
-                    NavigationLink(value: trip) {
-                        Text(trip.title)
+            ScrollView {
+                LazyVStack {
+                    ForEach(trips) { trip in
+                        NavigationLink(value: trip) {
+                            TripCard(trip: trip)
+                        }
                     }
                 }
-            }
-            .navigationDestination(for: Trip.self) { trip in
-                TripDetailView(trip: trip)
+                .navigationDestination(for: Trip.self) { trip in
+                    TripDetailView(trip: trip)
+                }
             }
         }
     }

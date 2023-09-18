@@ -12,20 +12,11 @@ struct ActivityView: View {
     
     var body: some View {
         if activity.activityType == .visit {
-            Text(activity.startDate, style: .time)
+            VisitCard(activity: activity)
         }
         
         if activity.activityType == .journey {
-            List {
-                ForEach(activity.steps ?? []) { step in
-                    NavigationLink(value: step) {
-                        Text(step.timestamp, style: .time)
-                    }
-                }
-            }
-            .navigationDestination(for: Step.self) { step in
-                Text(step.timestamp, style: .time)
-            }
+            JourneyCard(activity: activity)
         }
     }
 }

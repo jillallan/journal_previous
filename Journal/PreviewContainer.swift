@@ -44,8 +44,8 @@ struct PreviewContainer {
 //
         modelContext.insert(Step.templeMeadsStation)
         modelContext.insert(Step.bathSpaStation)
-//        modelContext.insert(Step.chippenhamStation)
-//        modelContext.insert(Step.swindonStation)
+        modelContext.insert(Step.chippenhamStation)
+        modelContext.insert(Step.swindonStation)
 //        modelContext.insert(Step.didcotStation)
 //        modelContext.insert(Step.readingStation)
 //        modelContext.insert(Step.paddingtonStation)
@@ -56,8 +56,8 @@ struct PreviewContainer {
 //
         Step.templeMeadsStation.activity = Activity.templeMeads
         Step.bathSpaStation.activity = Activity.templeMeadsToPaddington
-//        Step.chippenhamStation.activity = Activity.templeMeadsToPaddington
-//        Step.swindonStation.activity = Activity.templeMeadsToPaddington
+        Step.chippenhamStation.activity = Activity.templeMeadsToPaddington
+        Step.swindonStation.activity = Activity.templeMeadsToPaddington
 //        Step.didcotStation.activity = Activity.templeMeadsToPaddington
 //        Step.readingStation.activity = Activity.templeMeadsToPaddington
 //        Step.paddingtonStation.activity = Activity.paddington

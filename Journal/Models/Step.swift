@@ -55,21 +55,25 @@ extension Step {
         verticalAccuracy: 0.0
     )
     
-//    static let chippenhamStation = Step(
-//        timestamp: DateFormatter.date(fromDefault: "2016-07-28 09:54:00"),
-////        coordinate: CLLocationCoordinate2D(latitude: 51.462365, longitude: -2.115312),
-//        altitude: 0.0,
-//        horizontalAccuracy: 0.0,
-//        verticalAccuracy: 0.0
-//    )
-//    
-//    static let swindonStation = Step(
-//        timestamp: DateFormatter.date(fromDefault: "2016-07-28 10:08:00"),
-////        coordinate: CLLocationCoordinate2D(latitude: 51.565890, longitude: -1.7855841),
-//        altitude: 0.0,
-//        horizontalAccuracy: 0.0,
-//        verticalAccuracy: 0.0
-//    )
+    static let chippenhamStation = Step(
+        timestamp: DateFormatter.date(fromDefault: "2016-07-28 09:54:00"),
+//        coordinate: CLLocationCoordinate2D(latitude: 51.462365, longitude: -2.115312),
+        latitude: 51.462365,
+        longitude: -2.115312,
+        altitude: 0.0,
+        horizontalAccuracy: 0.0,
+        verticalAccuracy: 0.0
+    )
+    
+    static let swindonStation = Step(
+        timestamp: DateFormatter.date(fromDefault: "2016-07-28 10:08:00"),
+//        coordinate: CLLocationCoordinate2D(latitude: 51.565890, longitude: -1.7855841),
+        latitude: 51.565890,
+        longitude: -1.7855841,
+        altitude: 0.0,
+        horizontalAccuracy: 0.0,
+        verticalAccuracy: 0.0
+    )
 //    
 //    
 //    static let didcotStation = Step(
