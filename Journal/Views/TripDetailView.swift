@@ -10,38 +10,16 @@ import SwiftUI
 
 struct TripDetailView: View {
     let trip: Trip
-    @State var trips: [Trip] = []
     
     var body: some View {
         GeometryReader { geometry in
             Map()
                 .safeAreaInset(edge: .bottom) {
-                    ScrollView(.horizontal) {
-                        LazyHStack {
-                            ForEach(trips) { trip in
-                                Section {
-                                    ForEach(trip.activities ?? []) { activity in
-                                        NavigationLink(value: activity) {
-                                            ActivityView(activity: activity)
-                                        }
-                                    }
-                                } header: {
-                                    TripCard(trip: trip)
-                                } footer: {
-                                    Text("Add trip")
-                                }
-                            }
-                        }
-                    }
-                    .frame(height: geometry.size.width / 1.5)
-                    .navigationDestination(for: Activity.self) { activity in
-                        ActivityView(activity: activity)
-                    }
+                    TripActivityScrollView(trip: trip)
+                        .frame(height: geometry.size.width / 1.5)
             }
         }
-        .onAppear {
-            trips.append(trip)
-        }
+        
     }
 }
 
