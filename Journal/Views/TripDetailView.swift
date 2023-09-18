@@ -19,6 +19,7 @@ struct TripDetailView: View {
                         .frame(height: geometry.size.width / 1.5)
             }
         }
+        .toolbar(.hidden, for: .tabBar)
         
     }
 }
