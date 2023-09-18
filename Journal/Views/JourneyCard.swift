@@ -5,11 +5,19 @@
 //  Created by Jill Allan on 17/09/2023.
 //
 
+import OSLog
+import SwiftData
 import SwiftUI
 
 struct JourneyCard: View {
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: Self.self)
+    )
+    
     let activity: Activity
     @State private var activities: [Activity] = []
+    @State private var scrollPositionID: PersistentIdentifier?
     
     var body: some View {
         ScrollView {
@@ -23,14 +31,18 @@ struct JourneyCard: View {
                         }
                     } header: {
                         Text(activity.startDate.formatted(date: .abbreviated, time: .shortened))
+                            .padding(50)
                     } footer: {
                         Text("Add step")
+                            .padding(100)
                     }
                 }
             }
+            .scrollTargetLayout()
         }
         .background(.regularMaterial)
         .scrollViewCardStyle(aspectRatio: 1.5, cornerRadius: 25.0, count: 1, spacing: 10)
+        .scrollPosition(id: $scrollPositionID)
         
         // MARK: - Navigation
         .navigationDestination(for: Step.self) { step in
@@ -41,6 +53,9 @@ struct JourneyCard: View {
         // MARK: - View Updates
         .onAppear {
             activities.append(activity)
+        }
+        .onChange(of: scrollPositionID) {
+            logger.debug("Scroll position ID: \(String(describing: scrollPositionID))")
         }
     }
 }

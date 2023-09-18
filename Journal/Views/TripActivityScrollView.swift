@@ -18,7 +18,13 @@ struct TripActivityScrollView: View {
                     Section {
                         ForEach(trip.activities ?? []) { activity in
                             NavigationLink(value: activity) {
-                                ActivityView(activity: activity)
+                                if activity.activityType == .visit {
+                                    VisitCard(activity: activity)
+                                }
+                                
+                                if activity.activityType == .journey {
+                                    JourneyCard(activity: activity)
+                                }
                             }
                         }
                     } header: {
@@ -29,18 +35,17 @@ struct TripActivityScrollView: View {
                 }
             }
         }
-        
-        .navigationDestination(for: Activity.self) { activity in
-            ActivityView(activity: activity)
-        }
         .onAppear {
             trips.append(trip)
+            
         }
     }
 }
 
 #Preview {
     ModelContainerPreview(PreviewContainer.sample) {
-        TripActivityScrollView(trip: .bedminsterToBeijing)
+        NavigationStack {
+            TripActivityScrollView(trip: .bedminsterToBeijing)
+        }
     }
 }
