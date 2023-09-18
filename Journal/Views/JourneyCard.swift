@@ -24,7 +24,7 @@ struct JourneyCard: View {
             LazyVStack {
                 ForEach(activities) { activity in
                     Section {
-                        ForEach(activity.steps ?? []) { step in
+                        ForEach(activity.activitySteps) { step in
                             NavigationLink(value: step) {
                                 JourneyStepRow(step: step)
                             }

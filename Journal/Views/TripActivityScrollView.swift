@@ -16,7 +16,7 @@ struct TripActivityScrollView: View {
             LazyHStack {
                 ForEach(trips) { trip in
                     Section {
-                        ForEach(trip.activities ?? []) { activity in
+                        ForEach(trip.tripActivities) { activity in
                             NavigationLink(value: activity) {
                                 if activity.activityType == .visit {
                                     VisitCard(activity: activity)

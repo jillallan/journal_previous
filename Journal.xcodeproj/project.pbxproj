@@ -11,6 +11,7 @@
 		780A805C2AB7A1A200443302 /* TripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805B2AB7A1A200443302 /* TripCard.swift */; };
 		780A805E2AB7A26C00443302 /* VisitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805D2AB7A26C00443302 /* VisitCard.swift */; };
 		780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805F2AB7A2F700443302 /* JourneyCard.swift */; };
+		78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C92E5D2AB8A5840042EE66 /* Placemark.swift */; };
 		78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C22AB78ED30087172B /* JournalApp.swift */; };
 		78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C42AB78ED30087172B /* ContentView.swift */; };
 		78D1A7C72AB78ED50087172B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D1A7C62AB78ED50087172B /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		780A805B2AB7A1A200443302 /* TripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCard.swift; sourceTree = "<group>"; };
 		780A805D2AB7A26C00443302 /* VisitCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCard.swift; sourceTree = "<group>"; };
 		780A805F2AB7A2F700443302 /* JourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCard.swift; sourceTree = "<group>"; };
+		78C92E5D2AB8A5840042EE66 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		78D1A7BF2AB78ED30087172B /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D1A7C22AB78ED30087172B /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
 		78D1A7C42AB78ED30087172B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				78D1A7D52AB78EF60087172B /* Trip.swift */,
 				78D1A7D72AB78EFB0087172B /* Activity.swift */,
 				78D1A7D92AB78F000087172B /* Step.swift */,
+				78C92E5D2AB8A5840042EE66 /* Placemark.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				78D1A7DE2AB790690087172B /* TripView.swift in Sources */,
 				780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */,
 				78D1A7D82AB78EFB0087172B /* Activity.swift in Sources */,
+				78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */,
 				78D1A7D62AB78EF60087172B /* Trip.swift in Sources */,
 				78D1A7E42AB7966A0087172B /* ModelContainerPreview.swift in Sources */,
 				78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */,
