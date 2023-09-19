@@ -52,7 +52,7 @@ struct TripActivity: View {
         }
         .scrollPosition(id: $tripActivityScrollPositionID)
         .contentMargins(.horizontal, 20.0)
-        .scrollTargetBehavior(.viewAligned)
+        .scrollTargetBehavior(.paging)
         .scrollIndicators(.hidden)
         
         // MARK: - View Updates
