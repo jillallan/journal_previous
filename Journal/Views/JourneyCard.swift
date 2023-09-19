@@ -15,9 +15,12 @@ struct JourneyCard: View {
         category: String(describing: Self.self)
     )
     
+    @Environment(\.modelContext) private var modelContext
     let activity: Activity
     @State private var activities: [Activity] = []
-    @State private var scrollPositionID: PersistentIdentifier?
+    @Binding var tripActivityScrollPositionID: PersistentIdentifier?
+    @Binding var mapActivityID: PersistentIdentifier?
+    @State var journeyScrollPositionID: PersistentIdentifier?
     
     var body: some View {
         ScrollView {
@@ -42,7 +45,7 @@ struct JourneyCard: View {
         }
         .background(.regularMaterial)
         .scrollViewCardStyle(aspectRatio: 1.5, cornerRadius: 25.0, count: 1, spacing: 10)
-        .scrollPosition(id: $scrollPositionID)
+        .scrollPosition(id: $journeyScrollPositionID)
         
         // MARK: - Navigation
         .navigationDestination(for: Step.self) { step in
@@ -54,16 +57,35 @@ struct JourneyCard: View {
         .onAppear {
             activities.append(activity)
         }
-        .onChange(of: scrollPositionID) {
-            logger.debug("Scroll position ID: \(String(describing: scrollPositionID))")
+        .onChange(of: journeyScrollPositionID) {
+            
+            if tripActivityScrollPositionID == activity.persistentModelID {
+                mapActivityID = journeyScrollPositionID
+            }
         }
     }
 }
 
-#Preview {
+#Preview("Visit") {
     ModelContainerPreview(PreviewContainer.sample) {
         NavigationStack {
-            JourneyCard(activity: .templeMeadsToPaddington)
+            JourneyCard(
+                activity: .templeMeads,
+                tripActivityScrollPositionID: .constant(Activity.templeMeads.persistentModelID),
+                mapActivityID: .constant(Activity.templeMeads.persistentModelID)
+            )
+        }
+    }
+}
+
+#Preview("Journey") {
+    ModelContainerPreview(PreviewContainer.sample) {
+        NavigationStack {
+            JourneyCard(
+                activity: .templeMeadsToPaddington,
+                tripActivityScrollPositionID: .constant(Activity.templeMeadsToPaddington.persistentModelID),
+                mapActivityID: .constant(Activity.templeMeadsToPaddington.persistentModelID)
+            )
         }
     }
 }
