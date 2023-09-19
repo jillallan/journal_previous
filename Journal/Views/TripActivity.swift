@@ -1,15 +1,25 @@
 //
-//  TripActivityScrollView.swift
+//  TripActivity.swift
 //  Journal
 //
 //  Created by Jill Allan on 18/09/2023.
 //
 
+import OSLog
+import SwiftData
 import SwiftUI
 
-struct TripActivityScrollView: View {
+struct TripActivity: View {
+    
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: Self.self)
+    )
+    
     let trip: Trip
     @State var trips: [Trip] = []
+    @State var tripActivityScrollPositionID: PersistentIdentifier?
+    @Binding var mapActivityID: PersistentIdentifier?
     
     var body: some View {
         ScrollView(.horizontal) {
@@ -23,7 +33,11 @@ struct TripActivityScrollView: View {
                                 }
                                 
                                 if activity.activityType == .journey {
-                                    JourneyCard(activity: activity)
+                                    JourneyCard(
+                                        activity: activity,
+                                        tripActivityScrollPositionID: $tripActivityScrollPositionID,
+                                        mapActivityID: $mapActivityID
+                                    )
                                 }
                             }
                         }
@@ -34,10 +48,16 @@ struct TripActivityScrollView: View {
                     }
                 }
             }
+            .scrollTargetLayout()
         }
+        .scrollPosition(id: $tripActivityScrollPositionID)
+        
+        // MARK: - View Updates
         .onAppear {
             trips.append(trip)
-            
+        }
+        .onChange(of: tripActivityScrollPositionID) {
+            mapActivityID = tripActivityScrollPositionID
         }
     }
 }
@@ -45,7 +65,7 @@ struct TripActivityScrollView: View {
 #Preview {
     ModelContainerPreview(PreviewContainer.sample) {
         NavigationStack {
-            TripActivityScrollView(trip: .bedminsterToBeijing)
+            TripActivity(trip: .bedminsterToBeijing, mapActivityID: .constant(Trip.bedminsterToBeijing.persistentModelID))
         }
     }
 }
