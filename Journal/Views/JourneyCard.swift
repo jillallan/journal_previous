@@ -46,6 +46,8 @@ struct JourneyCard: View {
         .background(.regularMaterial)
         .scrollViewCardStyle(aspectRatio: 1.5, cornerRadius: 25.0, count: 1, spacing: 10)
         .scrollPosition(id: $journeyScrollPositionID)
+        .scrollTargetBehavior(.viewAligned)
+        .scrollIndicators(.hidden)
         
         // MARK: - Navigation
         .navigationDestination(for: Step.self) { step in
