@@ -33,7 +33,26 @@ struct TripDetailView: View {
                 mapPosition = updateMapPosition(for: mapActivityID)
             }
         }
-        
+        .navigationTitle(trip.title)
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button {
+                        // TODO: Add visit
+                    } label: {
+                        Label("Add visit", systemImage: "house")
+                    }
+                    Button {
+                        // TODO: Add journey
+                    } label: {
+                        Label("Add journey", systemImage: "car")
+                    }
+                } label: {
+                    Label("Add activity", systemImage: "plus")
+                }
+            }
+        }
     }
     
     func updateMapPosition(for currentModelID: PersistentIdentifier?) -> MapCameraPosition {
