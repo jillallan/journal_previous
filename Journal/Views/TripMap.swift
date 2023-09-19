@@ -10,13 +10,14 @@ import SwiftData
 import SwiftUI
 
 struct TripMap: View {
-    @Binding var steps: [Step]
-    @State var mapPosition: MapCameraPosition = .automatic
+    let trip: Trip
+//    @Binding var steps: [Step]
+    @Binding var mapPosition: MapCameraPosition
     
     var body: some View {
         Map(position: $mapPosition) {
             // TODO: Add annotations
-            ForEach(steps) { step in
+            ForEach(trip.steps) { step in
                 
                 if step.activity?.activityType == .visit {
                     Annotation("", coordinate: step.coordinate) {
@@ -34,14 +35,8 @@ struct TripMap: View {
                     }
                 }
             }
-            MapPolyline(coordinates: steps.map(\.coordinate))
+            MapPolyline(coordinates: trip.steps.map(\.coordinate))
                 .stroke(.indigo, lineWidth: 3)
-        }
-        .onChange(of: steps) {
-            withAnimation {
-                mapPosition = updateMapPosition(for: steps)
-            }
-            
         }
     }
     
@@ -72,9 +67,9 @@ struct TripMap: View {
 }
 
 #Preview("Trip") {
-    TripMap(steps: .constant(Trip.bedminsterToBeijing.steps))
+    TripMap(trip: .bedminsterToBeijing, mapPosition: .constant(.automatic))
 }
 
 #Preview("Visit") {
-    TripMap(steps: .constant(Activity.templeMeads.activitySteps))
+    TripMap(trip: .bedminsterToBeijing, mapPosition: .constant(.automatic))
 }
