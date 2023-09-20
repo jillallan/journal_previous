@@ -26,7 +26,7 @@ struct TripDetailView: View {
         }
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
-            steps = trip.steps
+            steps = trip.tripSteps
         }
         .onChange(of: mapActivityID) {
             withAnimation {
@@ -78,7 +78,7 @@ struct TripDetailView: View {
                 }
             case "Trip":
                 if let trip = PersistenceHelper.getTrip(scrollPositionID: currentModelID, modelContext: modelContext) {
-                    coordinates = trip.steps.map(\.coordinate)
+                    coordinates = trip.tripSteps.map(\.coordinate)
                 }
             default:
                 coordinates = []

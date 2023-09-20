@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import MapKit
 import SwiftData
 
 @Model
@@ -26,6 +27,10 @@ class Step {
     // MARK: - Computed Properties
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    var region: MKCoordinateRegion {
+        MKCoordinateRegion.calculateRegion(from: [coordinate])
     }
     
     var placemarkName: String {

@@ -17,6 +17,7 @@
 		789842E22ABA2EDC0037CFFF /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842E12ABA2EDC0037CFFF /* LocationSearchView.swift */; };
 		78A109342ABB0F8700BB8BC7 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109332ABB0F8700BB8BC7 /* Debouncer.swift */; };
 		78A109362ABB110100BB8BC7 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109352ABB110100BB8BC7 /* LocalSearchService.swift */; };
+		78A109382ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */; };
 		78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C92E5D2AB8A5840042EE66 /* Placemark.swift */; };
 		78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C22AB78ED30087172B /* JournalApp.swift */; };
 		78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C42AB78ED30087172B /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 		789842E12ABA2EDC0037CFFF /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		78A109332ABB0F8700BB8BC7 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		78A109352ABB110100BB8BC7 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
 		78C92E5D2AB8A5840042EE66 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		78D1A7BF2AB78ED30087172B /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D1A7C22AB78ED30087172B /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				78D1A7D12AB78EE40087172B /* DateFormatter+Extension.swift */,
 				780A80592AB7A10400443302 /* View+Extension.swift */,
 				78D1A7D32AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift */,
+				78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				78D1A7DE2AB790690087172B /* TripView.swift in Sources */,
 				789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */,
 				780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */,
+				78A109382ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift in Sources */,
 				78D1A7D82AB78EFB0087172B /* Activity.swift in Sources */,
 				78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */,
 				78D1A7D62AB78EF60087172B /* Trip.swift in Sources */,

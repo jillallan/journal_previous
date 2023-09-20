@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 import SwiftData
 
 enum ActivityType: Codable {
@@ -40,6 +41,10 @@ class Activity {
             }
         }
         return journeySteps.sorted()
+    }
+    
+    var region: MKCoordinateRegion {
+        MKCoordinateRegion.calculateRegion(from: activitySteps.map(\.coordinate))
     }
     
     var debugDescription: String {

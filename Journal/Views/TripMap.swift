@@ -11,13 +11,12 @@ import SwiftUI
 
 struct TripMap: View {
     let trip: Trip
-//    @Binding var steps: [Step]
     @Binding var mapPosition: MapCameraPosition
     
     var body: some View {
         Map(position: $mapPosition) {
             // TODO: Add annotations
-            ForEach(trip.steps) { step in
+            ForEach(trip.tripSteps) { step in
                 
                 if step.activity?.activityType == .visit {
                     Annotation("", coordinate: step.coordinate) {
@@ -35,7 +34,7 @@ struct TripMap: View {
                     }
                 }
             }
-            MapPolyline(coordinates: trip.steps.map(\.coordinate))
+            MapPolyline(coordinates: trip.tripSteps.map(\.coordinate))
                 .stroke(.indigo, lineWidth: 3)
         }
     }
