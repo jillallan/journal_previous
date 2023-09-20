@@ -40,6 +40,7 @@ struct TripDetailView: View {
                 Menu {
                     Button {
                         // TODO: Add visit
+                        
                     } label: {
                         Label("Add visit", systemImage: "house")
                     }
@@ -53,6 +54,13 @@ struct TripDetailView: View {
                 }
             }
         }
+        
+    }
+    
+    func addVisit() {
+        // TODO: Get focused activity and set dates accordingly
+        
+        let newVisit = Activity(startDate: Date.now, endDate: Date.now, activityType: .visit)
     }
     
     func updateMapPosition(for currentModelID: PersistentIdentifier?) -> MapCameraPosition {

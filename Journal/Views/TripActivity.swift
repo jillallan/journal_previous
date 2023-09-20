@@ -55,6 +55,13 @@ struct TripActivity: View {
         .scrollTargetBehavior(.paging)
         .scrollIndicators(.hidden)
         
+        // MARK: - Navigation
+        .navigationDestination(for: Activity.self) { activity in
+            if activity.activityType == .visit {
+                VisitEditor(activity: activity)
+            }
+        }
+        
         // MARK: - View Updates
         .onAppear {
             trips.append(trip)

@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Trips", systemImage: "suitcase")
                 }
-            LocationSearchView()
+            LocationSearchView(isLocationSearchViewSearching: .constant(false))
                 .tabItem {
                     Label("Search", systemImage: "suitcase")
                 }
