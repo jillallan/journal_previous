@@ -12,6 +12,7 @@ import SwiftUI
 struct LocationSearchView: View {
     @State var searchText: String = ""
     @State var searchResults: [MKMapItem] = []
+    
     @State var searchBoxIsPresented: Bool = true
     @Binding var isLocationSearchViewSearching: Bool
     
@@ -46,20 +47,8 @@ struct LocationSearchView: View {
                 } catch {
                     print("Unable to perform search result: \(error.localizedDescription)")
                 }
-                
             }
-//            search.start { response, error in
-//                guard let response = response else {
-//                    if let error = error {
-//                        print("Error getting search \(error.localizedDescription)")
-//                    }
-//                    return
-//                }
-//                searchResults.append(contentsOf: response.mapItems)
-//            }
         }
-        
-        
     }
     
     func search() {
