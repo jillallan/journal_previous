@@ -34,7 +34,8 @@ struct LocationSearch: View {
             .searchable(text: $searchQuery, prompt: "Search maps")
             .searchSuggestions {
                 ForEach(mapSearchService.searchResults) { mapItem in
-                    Text(mapItem.description)
+                    LocationSearchSuggestionRow(mapItem: mapItem)
+//                    Text(mapItem.description)
                     //                            .searchCompletion(mapItem.placemark.title ?? "No placemark")
                 }
             }

@@ -34,7 +34,7 @@ class Step {
     }
     
     var placemarkName: String {
-        placemark?.name ?? "Unknown Place"
+        placemark?.title ?? "Unknown Place"
     }
     
     var debugDescription: String {

@@ -23,7 +23,7 @@ class MapSearchService: ObservableObject {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.region = region
         searchRequest.naturalLanguageQuery = query
-        logger.debug("search request query: \(String(describing: searchRequest.naturalLanguageQuery))")
+        
         
         let search = MKLocalSearch(request: searchRequest)
         

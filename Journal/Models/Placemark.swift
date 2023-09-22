@@ -15,7 +15,7 @@ final class Placemark {
     // MARK: - Properties
     var latitude: Double
     var longitude: Double
-    var name: String
+    var name: String?
     var subThoroughfare: String?
     var thoroughfare: String?
     var subAdministrativeArea: String?
@@ -37,9 +37,46 @@ final class Placemark {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+    
+    var title: String {
+        if let name {
+            return name
+        }
+        return "No name"
+    }
+
+    var jointThoroughfare: String? {
+        if let subThoroughfare,
+           let thoroughfare {
+            return subThoroughfare + " " + thoroughfare
+        } else if let thoroughfare {
+            return thoroughfare
+        }
+        return nil
+    }
+    
+    var subTitle: String {
+//        if let jointThoroughfare {
+//            return jointThoroughfare
+//        }
+        if let jointAdministrativeArea {
+            return jointAdministrativeArea
+        }
+        return "No name"
+    }
+    
+    var jointAdministrativeArea: String? {
+        if let subAdministrativeArea,
+           let administrativeArea {
+            return subAdministrativeArea + " " + administrativeArea
+        } else if let administrativeArea {
+            return administrativeArea
+        }
+        return nil
+    }
 
     // MARK: - Initialization
-    init(latitude: Double, longitude: Double, name: String, subThoroughfare: String? = nil, thoroughfare: String? = nil, subAdministrativeArea: String? = nil, administrativeArea: String? = nil, subLocality: String? = nil, locality: String? = nil, postalCode: String? = nil, country: String? = nil, isoCountryCode: String? = nil, inlandWater: String? = nil, ocean: String? = nil, areaOfInterest: String? = nil, createdDate: Date) {
+    init(latitude: Double, longitude: Double, name: String? = nil, subThoroughfare: String? = nil, thoroughfare: String? = nil, subAdministrativeArea: String? = nil, administrativeArea: String? = nil, subLocality: String? = nil, locality: String? = nil, postalCode: String? = nil, country: String? = nil, isoCountryCode: String? = nil, inlandWater: String? = nil, ocean: String? = nil, areaOfInterest: String? = nil, createdDate: Date) {
         self.latitude = latitude
         self.longitude = longitude
         self.name = name
