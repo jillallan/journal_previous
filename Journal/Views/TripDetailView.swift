@@ -18,7 +18,7 @@ struct TripDetailView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            TripMap(trip: trip, mapPosition: $mapPosition)
+            TripMap(steps: trip.tripSteps, mapPosition: $mapPosition)
                 .safeAreaInset(edge: .bottom) {
                     TripActivity(trip: trip, mapActivityID: $mapActivityID)
                         .frame(height: geometry.size.width / 1.5)

@@ -19,15 +19,15 @@ struct VisitEditor: View {
     @State var mapPosition: MapCameraPosition = .automatic
     @State var arrivalDate: Date = Date.now
     @State var departureDate: Date = Date.now
+    @State var steps: [Step] = []
     @State private var isSearchViewPresented: Bool = false
     @State private var selectedDetents: PresentationDetent = .medium
     @State var isSearching: Bool = false
     
     var body: some View {
         let _ = logger.debug("is searching: \(isSearching)")
-        Map(position: $mapPosition) {
-            // TODO: search results
-        }
+        TripMap(steps: steps, mapPosition: $mapPosition)
+        
         .safeAreaInset(edge: .bottom) {
             VStack {
                 Form {
@@ -39,32 +39,41 @@ struct VisitEditor: View {
                         Label("Update location", systemImage: "map")
                     }
                 }
-                .frame(height: 300)
+                .frame(height: 200)
             }
         }
         .sheet(isPresented: $isSearchViewPresented) {
-            LocationSearchView(isLocationSearchViewSearching: $isSearching)
-                .presentationDetents(
-                    [.medium, .large],
-                    selection: $selectedDetents)
-        }
-        .onChange(of: isSearching) {
-            if isSearching {
-                selectedDetents = .large
-            } else {
-                selectedDetents = .medium
-            }
+            LocationSearchView(
+                searchDetentsSize: $selectedDetents
+            )
+            .presentationDetents(
+                [.medium, .large],
+                selection: $selectedDetents)
         }
         .onAppear {
             if let activity {
                 arrivalDate = activity.startDate
                 departureDate = activity.endDate
+                steps = activity.activitySteps
+                mapPosition = MapCameraPosition.region(activity.region)
                 // TODO: Update mapPosition
             }
         }
     }
 }
 
-#Preview("New visit") {
+#Preview("Add visit") {
     VisitEditor(activity: nil, arrivalDate: Date.now, departureDate: Date.now)
+}
+
+#Preview("Edit visit") {
+    ModelContainerPreview(PreviewContainer.sample) {
+        let visit = Activity.templeMeads
+        
+        VisitEditor(
+            activity: visit,
+            arrivalDate: visit.startDate,
+            departureDate: visit.endDate
+        )
+    }
 }

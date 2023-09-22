@@ -10,13 +10,13 @@ import SwiftData
 import SwiftUI
 
 struct TripMap: View {
-    let trip: Trip
+    let steps: [Step]
     @Binding var mapPosition: MapCameraPosition
     
     var body: some View {
         Map(position: $mapPosition) {
             // TODO: Add annotations
-            ForEach(trip.tripSteps) { step in
+            ForEach(steps) { step in
                 
                 if step.activity?.activityType == .visit {
                     Annotation("", coordinate: step.coordinate) {
@@ -34,7 +34,7 @@ struct TripMap: View {
                     }
                 }
             }
-            MapPolyline(coordinates: trip.tripSteps.map(\.coordinate))
+            MapPolyline(coordinates: steps.map(\.coordinate))
                 .stroke(.indigo, lineWidth: 3)
         }
     }
@@ -66,9 +66,22 @@ struct TripMap: View {
 }
 
 #Preview("Trip") {
-    TripMap(trip: .bedminsterToBeijing, mapPosition: .constant(.automatic))
+    ModelContainerPreview(PreviewContainer.sample) {
+        let trip = Trip.bedminsterToBeijing
+        TripMap(steps: trip.tripSteps, mapPosition: .constant(.region(trip.region)))
+    }
 }
 
 #Preview("Visit") {
-    TripMap(trip: .bedminsterToBeijing, mapPosition: .constant(.automatic))
+    ModelContainerPreview(PreviewContainer.sample) {
+        let visit = Activity.templeMeads
+        TripMap(steps: visit.activitySteps, mapPosition: .constant(.region(visit.region)))
+    }
+}
+
+#Preview("Journey") {
+    ModelContainerPreview(PreviewContainer.sample) {
+        let journey = Activity.templeMeadsToPaddington
+        TripMap(steps: journey.activitySteps, mapPosition: .constant(.region(journey.region)))
+    }
 }
