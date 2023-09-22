@@ -15,17 +15,21 @@ struct VisitEditor: View {
         category: String(describing: Self.self)
     )
     
+    // MARK: - Data Properties
     let activity: Activity?
     @State var mapPosition: MapCameraPosition = .automatic
     @State var arrivalDate: Date = Date.now
     @State var departureDate: Date = Date.now
     @State var steps: [Step] = []
+    
+    // MARK: - Navigation Properties
     @State private var isSearchViewPresented: Bool = false
+    
+    // MARK: - View Properties
     @State private var selectedDetents: PresentationDetent = .medium
-    @State var isSearching: Bool = false
     
     var body: some View {
-        let _ = logger.debug("is searching: \(isSearching)")
+        // MARK: - View
         TripMap(steps: steps, mapPosition: $mapPosition)
         
         .safeAreaInset(edge: .bottom) {
@@ -42,14 +46,18 @@ struct VisitEditor: View {
                 .frame(height: 200)
             }
         }
+        
+        // MARK: - Navigation
         .sheet(isPresented: $isSearchViewPresented) {
-            LocationSearchView(
-                searchDetentsSize: $selectedDetents
+            LocationSearch(
+                region: activity?.region ?? MKCoordinateRegion(), searchDetentsSize: $selectedDetents
             )
             .presentationDetents(
                 [.medium, .large],
                 selection: $selectedDetents)
         }
+        
+        // MARK: - View updates
         .onAppear {
             if let activity {
                 arrivalDate = activity.startDate

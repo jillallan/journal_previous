@@ -23,12 +23,9 @@ extension View {
         ))
     }
     
-    
-    // FIXME: Debounce isn't working
     func onChange<Value>(
         of value: Value,
         debounceTime delayInterval: TimeInterval,
-//        debounceTime: Duration,
         perform action: @escaping (_ newValue: Value) -> Void
     ) -> some View where Value: Equatable {
         modifier(DebouncedChangeViewModifier(trigger: value, action: action) {

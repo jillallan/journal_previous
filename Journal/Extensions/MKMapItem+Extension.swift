@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import MapKit
+
+extension MKMapItem: Identifiable {
+    
+}

@@ -18,10 +18,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Trips", systemImage: "suitcase")
                 }
-            LocationSearchView(isLocationSearchViewSearching: .constant(false))
-                .tabItem {
-                    Label("Search", systemImage: "suitcase")
-                }
         }
         .task {
             if trips.isEmpty {
