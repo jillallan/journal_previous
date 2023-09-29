@@ -20,30 +20,27 @@ struct LocationSearch: View {
     @ObservedObject var mapSearchService = MapSearchService()
     @State var region: MKCoordinateRegion
     @State var searchQuery: String = ""
+    @State var searchResult: MKMapItem?
 
     // MARK: - Navigation Properties
-    @State var isLocationSearchViewSearching: Bool = false
     @Binding var searchDetentsSize: PresentationDetent
+//    @State var isSearchResultShowing: Bool = false
 
-    
     var body: some View {
         VStack {
             NavigationStack {
-                SearchableView(isLocationSearchViewSearching: $isLocationSearchViewSearching, region: region)
+                SearchableView(searchDetentsSize: $searchDetentsSize)
             }
-            .searchable(text: $searchQuery, prompt: "Search maps")
+            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search maps")
             .searchSuggestions {
                 ForEach(mapSearchService.searchResults) { mapItem in
                     LocationSearchSuggestionRow(mapItem: mapItem)
-//                    Text(mapItem.description)
-                    //                            .searchCompletion(mapItem.placemark.title ?? "No placemark")
-                }
-            }
-            .onChange(of: isLocationSearchViewSearching) {
-                if isLocationSearchViewSearching {
-                    searchDetentsSize = .large
-                } else {
-                    searchDetentsSize = .medium
+                        .onTapGesture {
+                            logger.debug("item selected: \(mapItem.placemark.subTitle)")
+                            searchDetentsSize = .medium
+                            searchResult = mapItem
+                        }
+//                        .searchCompletion(mapItem.placemark.subTitle)
                 }
             }
             .onChange(of: searchQuery, debounceTime: 0.3) { searchQuery in
@@ -54,7 +51,14 @@ struct LocationSearch: View {
             .onSubmit(of: .search) {
                 let _ = logger.debug("search submitted")
             }
-        }        
+            .sheet(item: $searchResult) {
+                searchDetentsSize = .large
+            } content: { mapItem in
+                LocationSearchSuggestionRow(mapItem: mapItem)
+                    .presentationDetents(
+                        [.medium, .large])
+            }
+        }
     }
 }
 
@@ -67,28 +71,22 @@ struct LocationSearch: View {
 }
 
 struct SearchableView: View {
-    private let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier!,
-        category: String(describing: Self.self)
-    )
-    
-    @Binding var isLocationSearchViewSearching: Bool
-    let region: MKCoordinateRegion
-    
+    @Binding var searchDetentsSize: PresentationDetent
     @Environment(\.isSearching) var isSearching
     
-    
     var body: some View {
-        let _ = logger.debug("is searching: \(isSearching)")
         ScrollView {
             ScrollView(.horizontal) {
                 
             }
         }
-        .onChange(of: isSearching) {
-            isLocationSearchViewSearching = isSearching
-        }
-        .navigationTitle("Region centre: \(region.center.latitude), \(region.center.longitude)")
         .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: isSearching) {
+            if isSearching {
+                searchDetentsSize = .large
+            } else {
+                searchDetentsSize = .medium
+            }
+        }
     }
 }

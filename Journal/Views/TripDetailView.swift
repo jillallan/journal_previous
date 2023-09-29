@@ -24,7 +24,9 @@ struct TripDetailView: View {
                         .frame(height: geometry.size.width / 1.5)
             }
         }
+#if os(iOS)
         .toolbar(.hidden, for: .tabBar)
+#endif
         .onAppear {
             steps = trip.tripSteps
         }
@@ -34,8 +36,30 @@ struct TripDetailView: View {
             }
         }
         .navigationTitle(trip.title)
+#if os(iOS)
         .toolbarBackground(.hidden, for: .navigationBar)
+#endif
         .toolbar {
+#if os(macOS)
+            ToolbarItem {
+                Menu {
+                    Button {
+                        // TODO: Add visit
+                        
+                    } label: {
+                        Label("Add visit", systemImage: "house")
+                    }
+                    Button {
+                        // TODO: Add journey
+                    } label: {
+                        Label("Add journey", systemImage: "car")
+                    }
+                } label: {
+                    Label("Add activity", systemImage: "plus")
+                }
+            }
+#endif
+#if os(iOS)
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     Button {
@@ -53,8 +77,8 @@ struct TripDetailView: View {
                     Label("Add activity", systemImage: "plus")
                 }
             }
+#endif
         }
-        
     }
     
     func addVisit() {
