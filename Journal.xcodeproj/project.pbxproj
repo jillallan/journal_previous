@@ -13,6 +13,14 @@
 		780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805F2AB7A2F700443302 /* JourneyCard.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
+		789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DF2ABA2C670037CFFF /* VisitEditor.swift */; };
+		789842E22ABA2EDC0037CFFF /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842E12ABA2EDC0037CFFF /* LocationSearch.swift */; };
+		78A109342ABB0F8700BB8BC7 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109332ABB0F8700BB8BC7 /* Debouncer.swift */; };
+		78A109362ABB110100BB8BC7 /* MapSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109352ABB110100BB8BC7 /* MapSearchService.swift */; };
+		78A109382ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */; };
+		78A1093C2ABB402700BB8BC7 /* MKMapItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1093B2ABB402700BB8BC7 /* MKMapItem+Extension.swift */; };
+		78A109402ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1093F2ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift */; };
+		78A109422ABDB61500BB8BC7 /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A109412ABDB61500BB8BC7 /* CLPlacemark.swift */; };
 		78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C92E5D2AB8A5840042EE66 /* Placemark.swift */; };
 		78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C22AB78ED30087172B /* JournalApp.swift */; };
 		78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7C42AB78ED30087172B /* ContentView.swift */; };
@@ -38,6 +46,14 @@
 		780A805F2AB7A2F700443302 /* JourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCard.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
+		789842DF2ABA2C670037CFFF /* VisitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitEditor.swift; sourceTree = "<group>"; };
+		789842E12ABA2EDC0037CFFF /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
+		78A109332ABB0F8700BB8BC7 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		78A109352ABB110100BB8BC7 /* MapSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchService.swift; sourceTree = "<group>"; };
+		78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
+		78A1093B2ABB402700BB8BC7 /* MKMapItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapItem+Extension.swift"; sourceTree = "<group>"; };
+		78A1093F2ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchSuggestionRow.swift; sourceTree = "<group>"; };
+		78A109412ABDB61500BB8BC7 /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
 		78C92E5D2AB8A5840042EE66 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		78D1A7BF2AB78ED30087172B /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D1A7C22AB78ED30087172B /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
@@ -84,8 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				78D1A7D12AB78EE40087172B /* DateFormatter+Extension.swift */,
+				78A1093B2ABB402700BB8BC7 /* MKMapItem+Extension.swift */,
 				780A80592AB7A10400443302 /* View+Extension.swift */,
 				78D1A7D32AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift */,
+				78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */,
+				78A109412ABDB61500BB8BC7 /* CLPlacemark.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,6 +118,9 @@
 				78EEF8212AB872FA0009D3DD /* TripActivity.swift */,
 				780A805B2AB7A1A200443302 /* TripCard.swift */,
 				780A805D2AB7A26C00443302 /* VisitCard.swift */,
+				789842DF2ABA2C670037CFFF /* VisitEditor.swift */,
+				789842E12ABA2EDC0037CFFF /* LocationSearch.swift */,
+				78A1093F2ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift */,
 				780A805F2AB7A2F700443302 /* JourneyCard.swift */,
 				78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */,
 			);
@@ -109,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */,
+				78A109332ABB0F8700BB8BC7 /* Debouncer.swift */,
+				78A109352ABB110100BB8BC7 /* MapSearchService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,18 +251,26 @@
 			files = (
 				78D1A7E22AB7920C0087172B /* TripDetailView.swift in Sources */,
 				78D1A7DE2AB790690087172B /* TripView.swift in Sources */,
+				789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */,
 				780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */,
+				78A109382ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift in Sources */,
 				78D1A7D82AB78EFB0087172B /* Activity.swift in Sources */,
 				78C92E5E2AB8A5840042EE66 /* Placemark.swift in Sources */,
+				78A109422ABDB61500BB8BC7 /* CLPlacemark.swift in Sources */,
 				78D1A7D62AB78EF60087172B /* Trip.swift in Sources */,
 				78D1A7E42AB7966A0087172B /* ModelContainerPreview.swift in Sources */,
 				78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */,
 				78D1A7DA2AB78F000087172B /* Step.swift in Sources */,
 				789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */,
+				78A109402ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift in Sources */,
 				78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */,
 				78D1A7D22AB78EE40087172B /* DateFormatter+Extension.swift in Sources */,
+				78A109362ABB110100BB8BC7 /* MapSearchService.swift in Sources */,
 				780A805A2AB7A10400443302 /* View+Extension.swift in Sources */,
+				78A1093C2ABB402700BB8BC7 /* MKMapItem+Extension.swift in Sources */,
+				78A109342ABB0F8700BB8BC7 /* Debouncer.swift in Sources */,
 				789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */,
+				789842E22ABA2EDC0037CFFF /* LocationSearch.swift in Sources */,
 				78EEF8202AB86F930009D3DD /* JourneyStepRow.swift in Sources */,
 				78D1A7DC2AB78F110087172B /* PreviewContainer.swift in Sources */,
 				780A805C2AB7A1A200443302 /* TripCard.swift in Sources */,
@@ -391,7 +423,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jillallan.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,7 +461,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jillallan.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";

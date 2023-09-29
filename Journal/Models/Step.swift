@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import MapKit
 import SwiftData
 
 @Model
@@ -28,8 +29,12 @@ class Step {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
+    var region: MKCoordinateRegion {
+        MKCoordinateRegion.calculateRegion(from: [coordinate])
+    }
+    
     var placemarkName: String {
-        placemark?.name ?? "Unknown Place"
+        placemark?.title ?? "Unknown Place"
     }
     
     var debugDescription: String {

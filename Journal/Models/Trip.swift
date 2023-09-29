@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 import SwiftData
 
 @Model
@@ -27,7 +28,7 @@ class Trip {
         "Trip named: \(title)"
     }
     
-    var steps: [Step] {
+    var tripSteps: [Step] {
         var steps: [Step] = []
         
         _ = tripActivities.map { activity in
@@ -35,6 +36,10 @@ class Trip {
         }
         
         return steps.sorted()
+    }
+    
+    var region: MKCoordinateRegion {
+        MKCoordinateRegion.calculateRegion(from: tripSteps.map(\.coordinate))
     }
     
     // MARK: - Initialization

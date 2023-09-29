@@ -18,22 +18,73 @@ struct TripDetailView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            TripMap(trip: trip, mapPosition: $mapPosition)
+            TripMap(steps: trip.tripSteps, mapPosition: $mapPosition)
                 .safeAreaInset(edge: .bottom) {
                     TripActivity(trip: trip, mapActivityID: $mapActivityID)
                         .frame(height: geometry.size.width / 1.5)
             }
         }
+#if os(iOS)
         .toolbar(.hidden, for: .tabBar)
+#endif
         .onAppear {
-            steps = trip.steps
+            steps = trip.tripSteps
         }
         .onChange(of: mapActivityID) {
             withAnimation {
                 mapPosition = updateMapPosition(for: mapActivityID)
             }
         }
+        .navigationTitle(trip.title)
+#if os(iOS)
+        .toolbarBackground(.hidden, for: .navigationBar)
+#endif
+        .toolbar {
+#if os(macOS)
+            ToolbarItem {
+                Menu {
+                    Button {
+                        // TODO: Add visit
+                        
+                    } label: {
+                        Label("Add visit", systemImage: "house")
+                    }
+                    Button {
+                        // TODO: Add journey
+                    } label: {
+                        Label("Add journey", systemImage: "car")
+                    }
+                } label: {
+                    Label("Add activity", systemImage: "plus")
+                }
+            }
+#endif
+#if os(iOS)
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button {
+                        // TODO: Add visit
+                        
+                    } label: {
+                        Label("Add visit", systemImage: "house")
+                    }
+                    Button {
+                        // TODO: Add journey
+                    } label: {
+                        Label("Add journey", systemImage: "car")
+                    }
+                } label: {
+                    Label("Add activity", systemImage: "plus")
+                }
+            }
+#endif
+        }
+    }
+    
+    func addVisit() {
+        // TODO: Get focused activity and set dates accordingly
         
+        let newVisit = Activity(startDate: Date.now, endDate: Date.now, activityType: .visit)
     }
     
     func updateMapPosition(for currentModelID: PersistentIdentifier?) -> MapCameraPosition {
@@ -51,7 +102,7 @@ struct TripDetailView: View {
                 }
             case "Trip":
                 if let trip = PersistenceHelper.getTrip(scrollPositionID: currentModelID, modelContext: modelContext) {
-                    coordinates = trip.steps.map(\.coordinate)
+                    coordinates = trip.tripSteps.map(\.coordinate)
                 }
             default:
                 coordinates = []
