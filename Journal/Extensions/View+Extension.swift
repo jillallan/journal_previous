@@ -10,13 +10,17 @@ import SwiftUI
 
 extension View {
     func scrollViewCardStyle(
+        axes: Axis.Set,
         aspectRatio: Double,
+        contentMode: ContentMode,
         cornerRadius: Double,
         count: Int,
         spacing: Double
     ) -> some View {
         modifier(ScrollViewCardStyle(
+            axes: axes, 
             aspectRatio: aspectRatio,
+            contentMode: contentMode,
             cornerRadius: cornerRadius,
             count: count,
             spacing: spacing
@@ -32,10 +36,23 @@ extension View {
             try await Task.sleep(nanoseconds: UInt64(delayInterval * 1_000_000_000))
         })
     }
+    
+    // https://designcode.io/swiftui-handbook-conditional-modifier
+    // https://www.avanderlee.com/swiftui/conditional-view-modifier/
+    
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+         if condition {
+             transform(self)
+         } else {
+             self
+         }
+     }
 }
 
 struct ScrollViewCardStyle: ViewModifier {
+    var axes: Axis.Set
     var aspectRatio: Double
+    var contentMode: ContentMode
     var cornerRadius: Double
     var count: Int
     var spacing: Double
@@ -43,9 +60,9 @@ struct ScrollViewCardStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .aspectRatio(aspectRatio, contentMode: .fit)
+            .aspectRatio(aspectRatio, contentMode: contentMode)
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .circular))
-            .containerRelativeFrame([.horizontal], count: count, spacing: spacing)
+            .containerRelativeFrame(axes, count: count, spacing: spacing)
     }
 }
 

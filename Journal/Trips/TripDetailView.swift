@@ -6,10 +6,19 @@
 //
 
 import MapKit
+import OSLog
 import SwiftData
 import SwiftUI
 
 struct TripDetailView: View {
+    
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: Self.self)
+    )
+    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.modelContext) private var modelContext
     let trip: Trip
     @State var steps: [Step] = []
@@ -17,11 +26,14 @@ struct TripDetailView: View {
     @State var mapPosition: MapCameraPosition = .automatic
     
     var body: some View {
+        let _ = logger.debug("horizontal size class: \(String(describing: horizontalSizeClass))")
+        let _ = logger.debug("vertical size class: \(String(describing: verticalSizeClass))")
+        
         GeometryReader { geometry in
+            let _ = logger.debug("geometry aspectRatio: \(String(describing: geometry.size.width / geometry.size.height))") 
             TripMap(steps: trip.tripSteps, mapPosition: $mapPosition)
                 .safeAreaInset(edge: .bottom) {
-                    TripActivity(trip: trip, mapActivityID: $mapActivityID)
-                        .frame(height: geometry.size.width / 1.5)
+                    TripActivity(trip: trip, viewSize: geometry.size, mapActivityID: $mapActivityID)
             }
         }
 #if os(iOS)

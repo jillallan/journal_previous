@@ -32,6 +32,7 @@ struct JourneyCard: View {
                                 NavigationLink(value: step) {
                                     JourneyStepRow(step: step)
                                 }
+                                .buttonStyle(.plain)
                             }
                         } header: {
                             Text(activity.startDate.formatted(date: .abbreviated, time: .shortened))
@@ -51,7 +52,7 @@ struct JourneyCard: View {
 
         }
         .background(.regularMaterial)
-        .scrollViewCardStyle(aspectRatio: 1.5, cornerRadius: 25.0, count: 1, spacing: 10)
+        
         // MARK: - Navigation
         .navigationDestination(for: Step.self) { step in
             Text(step.timestamp, style: .time)

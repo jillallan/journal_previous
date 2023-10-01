@@ -1,5 +1,5 @@
 //
-//  ActivityCard.swift
+//  TripCard.swift
 //  Journal
 //
 //  Created by Jill Allan on 17/09/2023.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct VisitCard: View {
-    let activity: Activity
+struct TripCard: View {
+    let trip: Trip
     
     var body: some View {
         Image(.mice)
@@ -16,18 +16,17 @@ struct VisitCard: View {
             .scaledToFill()
             .overlay {
                 VStack {
-                    Text(activity.startDate.formatted(date: .abbreviated, time: .shortened))
-                    Text(activity.trip?.title ?? "No title")
+                    Text(trip.startDate.formatted(date: .abbreviated, time: .shortened))
+                    Text(trip.title)
                 }
                 .font(.largeTitle)
                 .foregroundStyle(.white)
             }
-            
     }
 }
 
 #Preview {
     ModelContainerPreview(PreviewContainer.sample) {
-        VisitCard(activity: .paddington)
+        TripCard(trip: .bedminsterToBeijing)
     }
 }

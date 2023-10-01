@@ -31,7 +31,12 @@ struct LocationSearch: View {
             NavigationStack {
                 SearchableView(searchDetentsSize: $searchDetentsSize)
             }
+#if os(iOS)
             .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search maps")
+#endif
+#if os(macOS)
+            .searchable(text: $searchQuery, placement: .automatic, prompt: "Search maps")
+#endif
             .searchSuggestions {
                 ForEach(mapSearchService.searchResults) { mapItem in
                     LocationSearchSuggestionRow(mapItem: mapItem)
@@ -77,10 +82,13 @@ struct SearchableView: View {
     var body: some View {
         ScrollView {
             ScrollView(.horizontal) {
+              
                 
             }
         }
+#if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+#endif
         .onChange(of: isSearching) {
             if isSearching {
                 searchDetentsSize = .large
