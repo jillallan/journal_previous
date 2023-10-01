@@ -11,7 +11,11 @@ import SwiftUI
 struct JournalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GeometryReader { geometry in
+                ContentView()
+                    .environment(\.sceneSize, geometry.size)
+                    .environment(\.sceneAspectRatio, geometry.size.width / geometry.size.height)
+            }
         }
         .modelContainer(for: Trip.self)
     }

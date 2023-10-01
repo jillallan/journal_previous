@@ -9,24 +9,24 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var trips: [Trip]
+
+    @State private var selection: AppScreen? = .trips
+    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
     
     var body: some View {
-        TabView {
-            TripView()
-                .tabItem {
-                    Label("Trips", systemImage: "suitcase")
-                }
-        }
-        .task {
-            if trips.isEmpty {
-                PreviewContainer.insertSampleData(modelContext: modelContext)
+
+        if prefersTabNavigation {
+            AppTabView(selection: $selection)
+        } else {
+            NavigationSplitView {
+                AppSidebarList(selection: $selection)
+            } detail: {
+                AppDetailColumn(screen: selection)
             }
-            
         }
     }
 }
+
 
 #Preview {
     ModelContainerPreview(PreviewContainer.sample) {

@@ -56,4 +56,10 @@ extension Trip {
         startDate: DateFormatter.date(fromDefault: "2016/07/28 08:06:00"),
         endDate: DateFormatter.date(fromDefault: "2016/09/02 12:00:00")
     )
+    
+    static let mountains = Trip(
+        title: "Mountains",
+        startDate: DateFormatter.date(fromDefault: "2016/09/03 08:06:00"),
+        endDate: DateFormatter.date(fromDefault: "2016/09/30 12:00:00")
+    )
 }

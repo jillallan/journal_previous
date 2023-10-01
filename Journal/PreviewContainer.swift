@@ -36,7 +36,9 @@ struct PreviewContainer {
     }
     
     static func insertSampleData(modelContext: ModelContext) {
+        
         modelContext.insert(Trip.bedminsterToBeijing)
+        modelContext.insert(Trip.mountains)
         
         modelContext.insert(Activity.templeMeads)
         modelContext.insert(Activity.templeMeadsToPaddington)
