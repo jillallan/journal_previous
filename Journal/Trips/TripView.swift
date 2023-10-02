@@ -71,18 +71,25 @@ struct TripView: View {
             #endif
                         }
         }
-        .task {
-            if trips.isEmpty {
-                PreviewContainer.insertSampleData(modelContext: modelContext)
-            }
-        }
+//        .task {
+//            if trips.isEmpty {
+//                PreviewContainer.insertSampleData(modelContext: modelContext)
+//            }
+//        }
     }
 }
 
-#Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
-        NavigationStack {
-            TripView()
-        }
+//#Preview("Old") {
+//    ModelContainerPreview(PreviewContainer.sample) {
+//        NavigationStack {
+//            TripView()
+//        }
+//    }
+//}
+
+#Preview("New") {
+    NavigationStack {
+        TripView()
     }
+    .journalDataContainer()
 }

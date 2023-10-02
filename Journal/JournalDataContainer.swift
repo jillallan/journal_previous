@@ -39,8 +39,8 @@ struct GenerateDataViewModifier: ViewModifier {
 }
 
 extension View {
-    func journalDataContainer(inMemory: Bool) -> some View {
-        modifier(JournalDataContainerViewModifier(inMemory: inMemory))
+    func journalDataContainer() -> some View {
+        modifier(JournalDataContainerViewModifier(inMemory: true))
     }
     
     func generateData() -> some View {
