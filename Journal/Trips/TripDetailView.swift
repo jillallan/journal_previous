@@ -151,10 +151,18 @@ struct TripDetailView: View {
     }
 }
 
-#Preview {
+#Preview("Old") {
     ModelContainerPreview(PreviewContainer.sample) {
         NavigationStack {
             TripDetailView(trip: .bedminsterToBeijing)
+        }
+    }
+}
+
+#Preview("New") {
+    NavigationStack {
+        ModelPreview { trip in
+            TripDetailView(trip: trip)
         }
     }
 }

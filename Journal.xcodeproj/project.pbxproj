@@ -14,6 +14,7 @@
 		78270A0D2AC7644F00E6BE1B /* AppScreen3Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A0C2AC7644F00E6BE1B /* AppScreen3Column.swift */; };
 		78270A0F2AC768F500E6BE1B /* AppContentColumn3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */; };
 		78270A112AC77A2500E6BE1B /* TripList3Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A102AC77A2500E6BE1B /* TripList3Column.swift */; };
+		7851E1032ACB4E370039D33B /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851E1022ACB4E370039D33B /* ModelPreview.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
 		789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DF2ABA2C670037CFFF /* VisitEditor.swift */; };
@@ -77,6 +78,7 @@
 		78270A0C2AC7644F00E6BE1B /* AppScreen3Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen3Column.swift; sourceTree = "<group>"; };
 		78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentColumn3.swift; sourceTree = "<group>"; };
 		78270A102AC77A2500E6BE1B /* TripList3Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList3Column.swift; sourceTree = "<group>"; };
+		7851E1022ACB4E370039D33B /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
 		789842DF2ABA2C670037CFFF /* VisitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitEditor.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				780A80562AB7A0B700443302 /* Models */,
 				780A80582AB7A0D200443302 /* Views */,
 				78F451E22ACAE7C4000CD2FF /* JournalDataContainer.swift */,
+				7851E1022ACB4E370039D33B /* ModelPreview.swift */,
 				78F451E62ACAEE18000CD2FF /* DataGeneration.swift */,
 				78D1A7DB2AB78F110087172B /* PreviewContainer.swift */,
 				78D1A7E32AB7966A0087172B /* ModelContainerPreview.swift */,
@@ -462,6 +465,7 @@
 				78A97E382AC8566B000B04C3 /* SettingsView.swift in Sources */,
 				78A1093C2ABB402700BB8BC7 /* MKMapItem+Extension.swift in Sources */,
 				78270A112AC77A2500E6BE1B /* TripList3Column.swift in Sources */,
+				7851E1032ACB4E370039D33B /* ModelPreview.swift in Sources */,
 				78A109342ABB0F8700BB8BC7 /* Debouncer.swift in Sources */,
 				78A97E3D2AC856C2000B04C3 /* LocationList.swift in Sources */,
 				789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */,
