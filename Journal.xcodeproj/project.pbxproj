@@ -14,6 +14,7 @@
 		78270A0D2AC7644F00E6BE1B /* AppScreen3Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A0C2AC7644F00E6BE1B /* AppScreen3Column.swift */; };
 		78270A0F2AC768F500E6BE1B /* AppContentColumn3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */; };
 		78270A112AC77A2500E6BE1B /* TripList3Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A102AC77A2500E6BE1B /* TripList3Column.swift */; };
+		78438FA52ACCA7C60037CDB4 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */; };
 		7851E1032ACB4E370039D33B /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851E1022ACB4E370039D33B /* ModelPreview.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
@@ -80,6 +81,7 @@
 		78270A0C2AC7644F00E6BE1B /* AppScreen3Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen3Column.swift; sourceTree = "<group>"; };
 		78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentColumn3.swift; sourceTree = "<group>"; };
 		78270A102AC77A2500E6BE1B /* TripList3Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList3Column.swift; sourceTree = "<group>"; };
+		78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		7851E1022ACB4E370039D33B /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				78A97E4A2ACA0BD9000B04C3 /* BaseTestCase.swift */,
 				78D184D12ACC39DB00E5F781 /* TestDataContainer.swift */,
+				78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */,
 				78D184CF2ACBFC1D00E5F781 /* JournalDataContainerTests.swift */,
 			);
 			path = JournalTests;
@@ -434,6 +437,7 @@
 				78A97E4B2ACA0BD9000B04C3 /* BaseTestCase.swift in Sources */,
 				78D184D22ACC39DB00E5F781 /* TestDataContainer.swift in Sources */,
 				78D184D02ACBFC1D00E5F781 /* JournalDataContainerTests.swift in Sources */,
+				78438FA52ACCA7C60037CDB4 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +675,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trip Journal";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -709,6 +714,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trip Journal";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
