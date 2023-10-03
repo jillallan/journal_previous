@@ -1,14 +1,61 @@
 //
-//  DataGeneration.swift
-//  Journal
+//  DataGenerationTests.swift
+//  JournalTests
 //
-//  Created by Jill Allan on 02/10/2023.
+//  Created by Jill Allan on 03/10/2023.
 //
 
-import Foundation
 import SwiftData
+import XCTest
+@testable import Journal
 
-class DataGeneration {
+final class JournalDataContainerTests: BaseTestCase {
+    var fakeDataGeneration: FakeDataGeneration.Type!
+    var journalDataContainer: JournalDataContainer!
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    @MainActor func testDataGeneration2() throws {
+        let container = TestDataContainer(inMemory: true)
+        
+        container.dataGeneration.generateData(modelContext: container.container.mainContext)
+        let descriptor = FetchDescriptor<Trip>()
+        let trips = try container.container.mainContext.fetchCount(descriptor)
+       
+        XCTAssertEqual(trips, 2)
+
+    }
+
+    override func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+}
+
+struct MockContainer {
+    let container: ModelContainer
+    var dataGeneration: DataGenerationTestable.Type = DataGeneration.self
+    
+    init(inMemory: Bool) {
+        do {
+            let configuration = ModelConfiguration(isStoredInMemoryOnly: inMemory)
+            container = try ModelContainer(for: Trip.self, configurations: configuration)
+            print(String(describing: container))
+        } catch {
+            fatalError("Unable to load model container: \(error.localizedDescription)")
+        }
+    }
+}
+
+class FakeDataGeneration: DataGenerationTestable {
     static func generateData(modelContext: ModelContext) {
         modelContext.insert(Trip.bedminsterToBeijing)
         modelContext.insert(Trip.mountains)
@@ -56,12 +103,5 @@ class DataGeneration {
         Step.readingStation.placemark = Placemark.readingStation
         Step.paddingtonStation.placemark = Placemark.paddingtonStation
     }
-}
 
-extension DataGeneration: DataGenerationTestable {
-    
-}
-
-protocol DataGenerationTestable {
-    static func generateData(modelContext: ModelContext)
 }

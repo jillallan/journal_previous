@@ -9,16 +9,18 @@ import SwiftUI
 
 @main
 struct JournalApp: App {
+  
+#if DEBUG
+    let inMemory: Bool = true
+#else
+    let inMemory: Bool = false
+#endif
     
     var body: some Scene {
         WindowGroup {
             GeometryReader { geometry in
                 ContentView()
-#if DEBUG
-                    .journalDataContainer()
-#else
-                    .modelContainer(for: Trip.self)
-#endif
+                    .journalDataContainer(inMemory: inMemory)
                     .environment(\.sceneSize, geometry.size)
                     .environment(\.sceneAspectRatio, geometry.size.width / geometry.size.height)
             }

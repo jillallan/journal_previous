@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct JournalDataContainerViewModifier: ViewModifier {
+struct JournalDataContainer {
     let container: ModelContainer
     
     init(inMemory: Bool) {
@@ -19,7 +19,9 @@ struct JournalDataContainerViewModifier: ViewModifier {
             fatalError("Unable to load model container: \(error.localizedDescription)")
         }
     }
-    
+}
+
+extension JournalDataContainer: ViewModifier {
     func body(content: Content) -> some View {
         content
             .generateData()
@@ -39,8 +41,8 @@ struct GenerateDataViewModifier: ViewModifier {
 }
 
 extension View {
-    func journalDataContainer() -> some View {
-        modifier(JournalDataContainerViewModifier(inMemory: true))
+    func journalDataContainer(inMemory: Bool = true) -> some View {
+        modifier(JournalDataContainer(inMemory: inMemory))
     }
     
     func generateData() -> some View {

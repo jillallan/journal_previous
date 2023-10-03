@@ -18,6 +18,10 @@ class BaseTestCase: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func test_example() throws {
+  
+    }
 
 
     func testPerformanceExample() throws {
