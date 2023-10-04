@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 @testable import Journal
 
-struct TestDataContainer {
+struct MockJournalDataContainer {
     let container: ModelContainer
     var dataGeneration: DataGeneration.Type = DataGeneration.self
     
