@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Placemark {
+final class Placemark: PlacemarkDescribable {
     
     // MARK: - Properties
     var latitude: Double

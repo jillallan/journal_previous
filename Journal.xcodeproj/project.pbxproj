@@ -15,6 +15,7 @@
 		78270A0F2AC768F500E6BE1B /* AppContentColumn3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */; };
 		78270A112AC77A2500E6BE1B /* TripList3Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78270A102AC77A2500E6BE1B /* TripList3Column.swift */; };
 		78438FA52ACCA7C60037CDB4 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */; };
+		78438FA72ACDE59C0037CDB4 /* PlacemarkDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */; };
 		7851E1032ACB4E370039D33B /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7851E1022ACB4E370039D33B /* ModelPreview.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
@@ -82,6 +83,7 @@
 		78270A0E2AC768F500E6BE1B /* AppContentColumn3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentColumn3.swift; sourceTree = "<group>"; };
 		78270A102AC77A2500E6BE1B /* TripList3Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripList3Column.swift; sourceTree = "<group>"; };
 		78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkDescribable.swift; sourceTree = "<group>"; };
 		7851E1022ACB4E370039D33B /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
@@ -167,11 +169,12 @@
 			children = (
 				78D1A7D12AB78EE40087172B /* DateFormatter+Extension.swift */,
 				78A1093B2ABB402700BB8BC7 /* MKMapItem+Extension.swift */,
+				78D1A7D32AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift */,
 				78DE0CCE2AC6FAF3003A61FC /* EnvironmentValues+Extension.swift */,
 				780A80592AB7A10400443302 /* View+Extension.swift */,
-				78D1A7D32AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift */,
 				78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */,
 				78A109412ABDB61500BB8BC7 /* CLPlacemark.swift */,
+				78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				78D1A7E22AB7920C0087172B /* TripDetailView.swift in Sources */,
 				78DE0CD52AC74A10003A61FC /* AppSidebar3Column.swift in Sources */,
 				78DE0CD32AC71E27003A61FC /* TripEditor.swift in Sources */,
+				78438FA72ACDE59C0037CDB4 /* PlacemarkDescribable.swift in Sources */,
 				78F451E32ACAE7C4000CD2FF /* JournalDataContainer.swift in Sources */,
 				78270A0F2AC768F500E6BE1B /* AppContentColumn3.swift in Sources */,
 				78F451E72ACAEE18000CD2FF /* DataGeneration.swift in Sources */,
