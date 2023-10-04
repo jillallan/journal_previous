@@ -5,6 +5,7 @@
 //  Created by Jill Allan on 03/10/2023.
 //
 
+import CoreLocation
 import XCTest
 @testable import Journal
 
@@ -21,6 +22,20 @@ final class ExtensionTests: BaseTestCase {
         
         XCTAssertEqual(defaultDateFormat, date)
        
+    }
+    
+    func testCLLocationCoordinate2d_whenComparingMatchingCooridantes_returnsTrue() throws {
+        let coordinate1 = CLLocationCoordinate2D(latitude: 51.5, longitude: 0.0)
+        let coordinate2 = CLLocationCoordinate2D(latitude: 51.5, longitude: 0.0)
+        
+        XCTAssertTrue(coordinate1 == coordinate2)
+    }
+    
+    func testCLLocationCoordinate2d_whenComparingMissmatchingCooridantes_returnsFalse() throws {
+        let coordinate1 = CLLocationCoordinate2D(latitude: 51.5, longitude: 0.0)
+        let coordinate2 = CLLocationCoordinate2D(latitude: 51.0, longitude: 1.0)
+        
+        XCTAssertTrue(coordinate1 != coordinate2)
     }
 
     override func testPerformanceExample() throws {
