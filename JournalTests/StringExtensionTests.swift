@@ -43,9 +43,10 @@ final class StringExtensionTests: BaseTestCase {
         
         let firstletter = try XCTUnwrap(randomSentence.first)
         let lastCharacter = try XCTUnwrap(randomSentence.last)
-        var allOtherCharacters = randomSentence
+        var allOtherCharacters = randomSentence.replacingOccurrences(of: " ", with: "")
         allOtherCharacters.removeFirst()
         allOtherCharacters.removeLast()
+
     
         print("Test Sentence: \(allOtherCharacters)")
         
@@ -53,9 +54,9 @@ final class StringExtensionTests: BaseTestCase {
         XCTAssertTrue(!randomSentence.isEmpty, "There should be a sentence")
         XCTAssertTrue(firstletter.isUppercase, "The first letter of the sentence should be uppercase")
         XCTAssertEqual(lastCharacter, ".", "The last character of the sentences should be a full stop")
-        allOtherCharacters.map { character in
-            XCTAssertTrue(character.isLowercase || character == " ", "Apart from the first and end characters, the characters of the sentences should all be lowercase: \(character)")
-//            XCTAssertTrue(character.isLetter, "Apart from the first and end characters, the characters of the sentences should all be letters")
+        _ = allOtherCharacters.map { character in
+            XCTAssertTrue(character.isLowercase, "The character \(character) should be lowercase")
+            XCTAssertTrue(character.isLetter, "The character \(character) should be a letter")
         }
     }
     
