@@ -73,6 +73,7 @@ extension PlacemarkDescribable {
         return nil
     }
     
+    // FIXME: Allow for all combinations maybe??
     var localityAndAdminstrativeArea: String? {
         if let locality,
            let subAdministrativeArea {

@@ -53,8 +53,8 @@ class Trip {
 extension Trip {
     static let bedminsterToBeijing = Trip(
         title: "Bedminster to Beijing",
-        startDate: DateFormatter.date(fromDefault: "2016/07/28 08:06:00"),
-        endDate: DateFormatter.date(fromDefault: "2016/09/02 12:00:00")
+        startDate: Date.from(string: "2016/07/28 08:06:00"), //DateFormatter.date(fromDefault: "2016/07/28 08:06:00"),
+        endDate: Date.from(string: "2016/09/02 12:00:00") //DateFormatter.date(fromDefault: "2016/09/02 12:00:00")
     )
     
     static let mountains = Trip(
