@@ -24,6 +24,11 @@
 		7863D43E2AD94DDE004E963C /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D43D2AD94DDE004E963C /* DateExtensionTests.swift */; };
 		7863D4422AD96913004E963C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4412AD96913004E963C /* String+Extension.swift */; };
 		7863D4442AD96A4B004E963C /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4432AD96A4B004E963C /* StringExtensionTests.swift */; };
+		7863D4462AD97834004E963C /* CLLocationCoordinate2DExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4452AD97834004E963C /* CLLocationCoordinate2DExtensionTests.swift */; };
+		7863D4482AD98DA3004E963C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4472AD98DA3004E963C /* Double+Extension.swift */; };
+		7863D44A2AD98DC3004E963C /* DoubleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4492AD98DC3004E963C /* DoubleExtensionTests.swift */; };
+		7863D44C2AD991A3004E963C /* MKCoordinateSpan+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D44B2AD991A3004E963C /* MKCoordinateSpan+Extension.swift */; };
+		7863D44E2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D44D2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
 		789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DF2ABA2C670037CFFF /* VisitEditor.swift */; };
@@ -99,6 +104,11 @@
 		7863D43D2AD94DDE004E963C /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		7863D4412AD96913004E963C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7863D4432AD96A4B004E963C /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		7863D4452AD97834004E963C /* CLLocationCoordinate2DExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtensionTests.swift; sourceTree = "<group>"; };
+		7863D4472AD98DA3004E963C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		7863D4492AD98DC3004E963C /* DoubleExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTests.swift; sourceTree = "<group>"; };
+		7863D44B2AD991A3004E963C /* MKCoordinateSpan+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateSpan+Extension.swift"; sourceTree = "<group>"; };
+		7863D44D2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateSpanExtensionTests.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
 		789842DF2ABA2C670037CFFF /* VisitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitEditor.swift; sourceTree = "<group>"; };
@@ -186,9 +196,11 @@
 				7863D43B2AD6884E004E963C /* Date+Extension.swift */,
 				78A1093B2ABB402700BB8BC7 /* MKMapItem+Extension.swift */,
 				78D1A7D32AB78EF10087172B /* CLLocationCoordinate2D+Extension.swift */,
+				7863D4472AD98DA3004E963C /* Double+Extension.swift */,
+				78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */,
+				7863D44B2AD991A3004E963C /* MKCoordinateSpan+Extension.swift */,
 				78DE0CCE2AC6FAF3003A61FC /* EnvironmentValues+Extension.swift */,
 				780A80592AB7A10400443302 /* View+Extension.swift */,
-				78A109372ABB140300BB8BC7 /* MKCoordinateRegion+Extension.swift */,
 				78A109412ABDB61500BB8BC7 /* CLPlacemark.swift */,
 				78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */,
 			);
@@ -305,6 +317,9 @@
 				78A97E4A2ACA0BD9000B04C3 /* BaseTestCase.swift */,
 				781531462AD34B9F00B0D9AB /* RandomGenerator.swift */,
 				78438FA42ACCA7C60037CDB4 /* ExtensionTests.swift */,
+				7863D4452AD97834004E963C /* CLLocationCoordinate2DExtensionTests.swift */,
+				7863D44D2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift */,
+				7863D4492AD98DC3004E963C /* DoubleExtensionTests.swift */,
 				7863D43D2AD94DDE004E963C /* DateExtensionTests.swift */,
 				7863D4432AD96A4B004E963C /* StringExtensionTests.swift */,
 				78438FAC2ACDF1380037CDB4 /* ProtocolTests.swift */,
@@ -470,9 +485,12 @@
 				7863D4442AD96A4B004E963C /* StringExtensionTests.swift in Sources */,
 				7863D43E2AD94DDE004E963C /* DateExtensionTests.swift in Sources */,
 				78A97E4B2ACA0BD9000B04C3 /* BaseTestCase.swift in Sources */,
+				7863D44A2AD98DC3004E963C /* DoubleExtensionTests.swift in Sources */,
 				78D184D22ACC39DB00E5F781 /* MockJournalDataContainer.swift in Sources */,
 				78D184D02ACBFC1D00E5F781 /* JournalDataContainerTests.swift in Sources */,
 				78438FAD2ACDF1380037CDB4 /* ProtocolTests.swift in Sources */,
+				7863D4462AD97834004E963C /* CLLocationCoordinate2DExtensionTests.swift in Sources */,
+				7863D44E2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift in Sources */,
 				78438FA52ACCA7C60037CDB4 /* ExtensionTests.swift in Sources */,
 				78438FAB2ACDEDF60037CDB4 /* MockPlacemark.swift in Sources */,
 			);
@@ -486,6 +504,7 @@
 				78DE0CD52AC74A10003A61FC /* AppSidebar3Column.swift in Sources */,
 				78DE0CD32AC71E27003A61FC /* TripEditor.swift in Sources */,
 				78438FA72ACDE59C0037CDB4 /* PlacemarkDescribable.swift in Sources */,
+				7863D4482AD98DA3004E963C /* Double+Extension.swift in Sources */,
 				78F451E32ACAE7C4000CD2FF /* JournalDataContainer.swift in Sources */,
 				78270A0F2AC768F500E6BE1B /* AppContentColumn3.swift in Sources */,
 				78F451E72ACAEE18000CD2FF /* DataGeneration.swift in Sources */,
@@ -502,6 +521,7 @@
 				78A97E3A2AC85675000B04C3 /* StatisticsView.swift in Sources */,
 				78D1A7C52AB78ED30087172B /* ContentView.swift in Sources */,
 				78D1A7DA2AB78F000087172B /* Step.swift in Sources */,
+				7863D44C2AD991A3004E963C /* MKCoordinateSpan+Extension.swift in Sources */,
 				789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */,
 				78A109402ABDB47900BB8BC7 /* LocationSearchSuggestionRow.swift in Sources */,
 				78DE0CD72AC74A25003A61FC /* DetailView.swift in Sources */,

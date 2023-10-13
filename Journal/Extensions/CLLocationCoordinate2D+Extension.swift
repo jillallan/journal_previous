@@ -16,6 +16,29 @@ extension CLLocationCoordinate2D: Equatable {
     }
 }
 
+extension CLLocationCoordinate2D {
+    
+    static func random() -> CLLocationCoordinate2D {
+        let latitude = Double.random(in: -90...90)
+        let longitude = Double.random(in: -180...180)
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    static func centre(of coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D? {
+        let latitude = Double.midRange(of: coordinates.map(\.latitude))
+        let longitude = Double.midRange(of: coordinates.map(\.longitude))
+        
+        if let latitude,
+           let longitude {
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        } else {
+            return nil
+        }
+    }
+}
+
+
+
 // Added codable conformance to enable use as a property in swift data
 //extension CLLocationCoordinate2D: Codable {
 //    enum CodingKeys: CodingKey {
