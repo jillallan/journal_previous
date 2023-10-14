@@ -39,7 +39,8 @@ class Trip {
     }
     
     var region: MKCoordinateRegion {
-        MKCoordinateRegion.calculateRegion(from: tripSteps.map(\.coordinate))
+        // FIXME: Padding should be a percentage to account for changes in longitude / latitude
+        MKCoordinateRegion.calculateRegion(from: tripSteps.map(\.coordinate), padding: 10.0)
     }
     
     // MARK: - Initialization

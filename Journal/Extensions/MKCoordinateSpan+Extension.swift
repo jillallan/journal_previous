@@ -15,7 +15,8 @@ extension MKCoordinateSpan: Equatable {
 }
 
 extension MKCoordinateSpan {
-    static func span(of coordinates: [CLLocationCoordinate2D]) -> MKCoordinateSpan? {
+    static func span(of coordinates: [CLLocationCoordinate2D], padding: Double = 0.0) -> MKCoordinateSpan? {
+
         let latitude = Double.range(of: coordinates.map(\.latitude))
         let longitude = Double.range(of: coordinates.map(\.longitude))
         
@@ -25,7 +26,7 @@ extension MKCoordinateSpan {
             // If the latitude or longitude is 0 create a small lat or long
             // TODO: Check this is needed
             
-            return MKCoordinateSpan(latitudeDelta: latitude, longitudeDelta: longitude)
+            return MKCoordinateSpan(latitudeDelta: latitude + padding, longitudeDelta: longitude + padding)
 //            return MKCoordinateSpan(
 //                latitudeDelta: latitude == 0.0 ? 0.002 : latitude * 1.5,
 //                longitudeDelta: longitude == 0.0 ? 0.002 : longitude * 1.5

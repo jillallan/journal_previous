@@ -83,6 +83,26 @@ final class MKCoordinateSpanExtensionTests: BaseTestCase {
         
     }
     
+    func testMKCoordinateSpan_spanOfOneCoordinate_returnsRangeOfLatAndLongPlusPadding() {
+        // if
+        let coordinates = (0..<1).map { _ in
+            CLLocationCoordinate2D.random()
+        }
+        let padding = Double.random(in: 10...100)
+        
+        XCTAssertEqual(coordinates.count, 1, "coordinate array should have count of 1, not \(coordinates.count)")
+        
+        let latitudeRange = coordinates.map(\.latitude).max()! - coordinates.map(\.latitude).min()!
+        let longitudeRange = coordinates.map(\.longitude).max()! - coordinates.map(\.longitude).min()!
+    
+        // when
+        let span = MKCoordinateSpan.span(of: coordinates, padding: padding)
+        
+        // then
+        XCTAssertEqual(span, MKCoordinateSpan(latitudeDelta: latitudeRange + padding, longitudeDelta: longitudeRange + padding), "The span should be the range of the min and max of latitude and longitude")
+        
+    }
+    
     func testMKCoordinateSpan_spanOfNoCoordinates_returnsNil() {
         // if
         let coordinates: [CLLocationCoordinate2D] = []
