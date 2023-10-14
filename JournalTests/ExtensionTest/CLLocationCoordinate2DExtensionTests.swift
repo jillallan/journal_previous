@@ -69,5 +69,35 @@ final class CLLocationCoordinate2DExtensionTests: BaseTestCase {
         XCTAssertEqual(centre, CLLocationCoordinate2D(latitude: latitudeMidRange, longitude: longitudeMidRange), "The centre should be the midrange of the latitude and longitude")
         
     }
+    
+    func testCLLocationCoordinate2D_getCentreOfOneCoordinate_returnsMidRangeOfLatAndLong() {
+        // if
+        let coordinates = [CLLocationCoordinate2D.random()]
+        
+        XCTAssertEqual(coordinates.count, 1, "Coordinates count should be 1")
+        
+        
+        let latitudeMidRange = (coordinates.map(\.latitude).min()!  + coordinates.map(\.latitude).max()!) / 2.0
+        let longitudeMidRange = (coordinates.map(\.longitude).min()!  + coordinates.map(\.longitude).max()!) / 2.0
+    
+        // when
+        let centre = CLLocationCoordinate2D.centre(of: coordinates)
+        
+        // then
+        XCTAssertEqual(centre, CLLocationCoordinate2D(latitude: latitudeMidRange, longitude: longitudeMidRange), "The centre should be the midrange of the latitude and longitude")
+    }
 
+    func testCLLocationCoordinate2D_getCentreOfEmptyCoordinateArray_returnsNil() {
+        // if
+        let coordinates: [CLLocationCoordinate2D] = []
+        
+        XCTAssertEqual(coordinates.count, 0, "Coordinates count should be 0")
+    
+        // when
+        let centre = CLLocationCoordinate2D.centre(of: coordinates)
+        
+        // then
+        XCTAssertNil(centre, "Should return nil")
+    }
+    
 }

@@ -82,5 +82,17 @@ final class MKCoordinateSpanExtensionTests: BaseTestCase {
         XCTAssertEqual(span, MKCoordinateSpan(latitudeDelta: latitudeRange, longitudeDelta: longitudeRange), "The span should be the range of the min and max of latitude and longitude")
         
     }
+    
+    func testMKCoordinateSpan_spanOfNoCoordinates_returnsNil() {
+        // if
+        let coordinates: [CLLocationCoordinate2D] = []
+    
+        // when
+        let span = MKCoordinateSpan.span(of: coordinates)
+        
+        // then
+        XCTAssertNil(span, "Should return nil")
+        
+    }
 
 }
