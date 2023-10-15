@@ -10,17 +10,16 @@ import XCTest
 @testable import Journal
 
 class BaseTestCase: XCTestCase {
-
-    override func setUpWithError() throws {
-
+    var container: MockJournalDataContainer!
+    var modelContext: ModelContext!
+    
+    @MainActor override func setUpWithError() throws {
+        container = MockJournalDataContainer(inMemory: true)
+        modelContext = container.container.mainContext
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func test_example() throws {
-  
+        
     }
 
 //    func testPerformanceExample() throws {

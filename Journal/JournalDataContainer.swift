@@ -8,6 +8,7 @@
 import SwiftData
 import SwiftUI
 
+// TODO: Do not create data when testing
 struct JournalDataContainer {
     let container: ModelContainer
     
@@ -18,10 +19,13 @@ struct JournalDataContainer {
         } catch {
             fatalError("Unable to load model container: \(error.localizedDescription)")
         }
+        
+        print("Container initialized")
     }
 }
 
 extension JournalDataContainer: ViewModifier {
+    // TODO: Remove generate data from here and add to JournalApp
     func body(content: Content) -> some View {
         content
             .generateData()
@@ -29,6 +33,8 @@ extension JournalDataContainer: ViewModifier {
     }
 }
 
+
+// TODO: Move to own file
 struct GenerateDataViewModifier: ViewModifier {
     @Environment(\.modelContext) private var modelContext
     
@@ -37,15 +43,5 @@ struct GenerateDataViewModifier: ViewModifier {
             .onAppear {
                 DataGeneration.generateData(modelContext: modelContext)
             }
-    }
-}
-
-extension View {
-    func journalDataContainer(inMemory: Bool = true) -> some View {
-        modifier(JournalDataContainer(inMemory: inMemory))
-    }
-    
-    func generateData() -> some View {
-        modifier(GenerateDataViewModifier())
     }
 }

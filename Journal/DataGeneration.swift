@@ -55,6 +55,8 @@ class DataGeneration {
         Step.didcotStation.placemark = Placemark.didcotStation
         Step.readingStation.placemark = Placemark.readingStation
         Step.paddingtonStation.placemark = Placemark.paddingtonStation
+        
+        print("Data generated")
     }
 }
 

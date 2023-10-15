@@ -10,23 +10,33 @@ import XCTest
 @testable import Journal
 
 final class JournalDataContainerTests: BaseTestCase {
+//    var container: MockJournalDataContainer!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        container = MockJournalDataContainer(inMemory: true)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    @MainActor func testDataGeneration2() throws {
-        let container = MockJournalDataContainer(inMemory: true)
+    @MainActor func testDataGeneration() throws {
+//        let
         
         container.dataGeneration.generateData(modelContext: container.container.mainContext)
         let descriptor = FetchDescriptor<Trip>()
         let trips = try container.container.mainContext.fetchCount(descriptor)
        
         XCTAssertEqual(trips, 2)
+
+    }
+    
+    @MainActor func testDataIsEmpty() throws {
+
+        let descriptor = FetchDescriptor<Trip>()
+        let trips = try container.container.mainContext.fetchCount(descriptor)
+       
+        XCTAssertEqual(trips, 0)
 
     }
 

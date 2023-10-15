@@ -44,7 +44,7 @@ class Activity {
     }
     
     var region: MKCoordinateRegion {
-        MKCoordinateRegion.calculateRegion(from: activitySteps.map(\.coordinate))
+        MKCoordinateRegion.calculateRegion(from: activitySteps.map(\.coordinate), padding: 0.0)
     }
     
     var debugDescription: String {

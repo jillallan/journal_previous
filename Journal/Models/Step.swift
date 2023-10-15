@@ -30,7 +30,7 @@ class Step {
     }
     
     var region: MKCoordinateRegion {
-        MKCoordinateRegion.calculateRegion(from: [coordinate])
+        MKCoordinateRegion.calculateRegion(from: [coordinate], padding: 0.0)
     }
     
     var placemarkName: String {
