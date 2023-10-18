@@ -9,14 +9,15 @@ import SwiftData
 import XCTest
 @testable import Journal
 
-final class JournalDataContainerTests: BaseTestCase {
+final class JournalDataContainerTests: DataBaseTestCase {
 //    var container: MockJournalDataContainer!
 
     override func setUpWithError() throws {
-        container = MockJournalDataContainer(inMemory: true)
+        try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
+        try super.tearDownWithError()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
@@ -28,7 +29,6 @@ final class JournalDataContainerTests: BaseTestCase {
         let trips = try container.container.mainContext.fetchCount(descriptor)
        
         XCTAssertEqual(trips, 2)
-
     }
     
     @MainActor func testDataIsEmpty() throws {

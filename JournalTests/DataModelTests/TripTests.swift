@@ -9,7 +9,7 @@ import SwiftData
 import XCTest
 @testable import Journal
 
-final class TripTests: BaseTestCase {
+final class TripTests: DataBaseTestCase {
     var testTrip: Trip!
     
     @MainActor override func setUpWithError() throws {
@@ -19,7 +19,14 @@ final class TripTests: BaseTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+//        print("Deleted objects before tear down: \(modelContext.deletedModelsArray)")
+//        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
+//        
+//        print("Deleted objects after tear down: \(modelContext.deletedModelsArray)")
+//        container.container.deleteAllData()
+        
     }
     
     func testTrip_AddTrip_AddsTrip() throws {
@@ -43,9 +50,10 @@ final class TripTests: BaseTestCase {
         
         // when
         trip.title = randomWord
+        let newDebugDescription = testTrip.debugDescription
         
         // then
-        XCTAssertNotEqual(testTrip.debugDescription, randomWord)
+        XCTAssertNotEqual(newDebugDescription, randomWord)
     }
     
     func testTrip_addActivities_changesTripActivities() throws {
@@ -55,16 +63,16 @@ final class TripTests: BaseTestCase {
         
         let activity = Activity.templeMeads
         modelContext.insert(activity)
-            
+    
         activity.trip = trip
 
         XCTAssertEqual(trip.tripActivities.count, 1)
-    
     }
     
     func testTrip_noActivities_returnsEmptyArray() throws {
         
         let trip = Trip.bedminsterToBeijing
+        
         modelContext.insert(trip)
 
         XCTAssertEqual(trip.tripActivities.count, 0)

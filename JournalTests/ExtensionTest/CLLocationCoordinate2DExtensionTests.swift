@@ -9,7 +9,7 @@ import CoreLocation
 import XCTest
 @testable import Journal
 
-final class CLLocationCoordinate2DExtensionTests: BaseTestCase {
+final class CLLocationCoordinate2DExtensionTests: XCTestCase {
     
     func testCLLocationCoordinate2D_equatable_shouldReturnTrueWhenCoordinatesAreTheSame() {
         // if

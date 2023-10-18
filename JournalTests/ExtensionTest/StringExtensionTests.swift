@@ -8,7 +8,7 @@
 import XCTest
 @testable import Journal
 
-final class StringExtensionTests: BaseTestCase {
+final class StringExtensionTests: XCTestCase {
     
     func assertInRange(_ int: Int, in range: ClosedRange<Int>, _ message: String = "") {
         XCTAssertGreaterThanOrEqual(int, range.lowerBound, message)

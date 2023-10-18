@@ -9,7 +9,7 @@ import MapKit
 import XCTest
 @testable import Journal
 
-final class MKCoordinateSpanExtensionTests: BaseTestCase {
+final class MKCoordinateSpanExtensionTests: XCTestCase {
     
     func testCLLocationCoordinate2D_equatable_shouldReturnTrueWhenCoordinatesAreTheSame() {
         // if

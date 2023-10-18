@@ -8,7 +8,7 @@
 import XCTest
 @testable import Journal
 
-final class DoubleExtensionTests: BaseTestCase {
+final class DoubleExtensionTests: XCTestCase {
 
     func testDouble_getMidRange_returnsAverageOfMinimumAndMaximum() throws {
         // if
