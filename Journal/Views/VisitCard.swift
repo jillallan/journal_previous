@@ -27,7 +27,7 @@ struct VisitCard: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Activity) in
         VisitCard(activity: .paddington)
     }
 }

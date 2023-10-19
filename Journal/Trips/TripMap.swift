@@ -66,21 +66,21 @@ struct TripMap: View {
 }
 
 #Preview("Trip") {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         let trip = Trip.bedminsterToBeijing
         TripMap(steps: trip.tripSteps, mapPosition: .constant(.region(trip.region)))
     }
 }
 
 #Preview("Visit") {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         let visit = Activity.templeMeads
         TripMap(steps: visit.activitySteps, mapPosition: .constant(.region(visit.region)))
     }
 }
 
 #Preview("Journey") {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         let journey = Activity.templeMeadsToPaddington
         TripMap(steps: journey.activitySteps, mapPosition: .constant(.region(journey.region)))
     }

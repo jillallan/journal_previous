@@ -16,8 +16,7 @@ struct DetailView: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         DetailView(trip: .bedminsterToBeijing)
     }
-    
 }

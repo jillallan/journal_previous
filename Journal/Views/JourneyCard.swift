@@ -73,7 +73,7 @@ struct JourneyCard: View {
 }
 
 #Preview("Journey") {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Activity) in
         NavigationStack {
             JourneyCard(
                 activity: .templeMeadsToPaddington,

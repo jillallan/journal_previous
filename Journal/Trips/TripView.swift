@@ -46,7 +46,7 @@ struct TripView: View {
             }
             
                         .sheet(isPresented: $isTripEditorPresented) {
-                            TripEditor()
+     
                         }
                         .toolbar {
             #if os(macOS)

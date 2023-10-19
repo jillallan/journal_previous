@@ -22,8 +22,6 @@ struct AppTabView: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
-        AppTabView(selection: .constant(.trips))
-    }
+    AppTabView(selection: .constant(.trips))
 }
 

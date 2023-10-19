@@ -59,11 +59,3 @@ class DataGeneration {
         print("Data generated")
     }
 }
-
-extension DataGeneration: DataGenerationTestable {
-    
-}
-
-protocol DataGenerationTestable {
-    static func generateData(modelContext: ModelContext)
-}

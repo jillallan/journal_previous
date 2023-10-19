@@ -26,7 +26,7 @@ struct TripCard: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         TripCard(trip: .bedminsterToBeijing)
     }
 }

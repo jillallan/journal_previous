@@ -28,7 +28,7 @@ struct JourneyStepRow: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Activity) in
         JourneyStepRow(step: .templeMeadsStation)
     }
 }

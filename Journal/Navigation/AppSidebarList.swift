@@ -21,11 +21,9 @@ struct AppSidebarList: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
-        NavigationSplitView {
-            AppSidebarList(selection: .constant(.trips))
-        } detail: {
-            Text(verbatim: "Detail View!")
-        }
+    NavigationSplitView {
+        AppSidebarList(selection: .constant(.trips))
+    } detail: {
+        Text(verbatim: "Detail View!")
     }
 }
