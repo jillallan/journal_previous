@@ -9,6 +9,15 @@ import Combine
 import SwiftUI
 
 extension View {
+    
+    func journalDataContainer(inMemory: Bool = true) -> some View {
+        modifier(JournalDataContainer(inMemory: inMemory))
+    }
+    
+    func generateData() -> some View {
+        modifier(GenerateDataViewModifier())
+    }
+    
     func scrollViewCardStyle(
         axes: Axis.Set,
         aspectRatio: Double,

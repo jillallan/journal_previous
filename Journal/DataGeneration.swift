@@ -1,42 +1,15 @@
 //
-//  PreviewContainer.swift
+//  DataGeneration.swift
 //  Journal
 //
-//  Created by Jill Allan on 17/09/2023.
+//  Created by Jill Allan on 02/10/2023.
 //
 
-import CoreLocation
 import Foundation
 import SwiftData
 
-@MainActor
-struct PreviewContainer {
-    static var preview: ModelContainer = {
-        let schema = Schema([Trip.self])
-        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        
-        do {
-            let container = try ModelContainer(for: schema, configurations: [configuration])
-            insertSampleData(modelContext: container.mainContext)
-            
-            return container
-        } catch {
-            fatalError("error loading sample data: \(error.localizedDescription)")
-        }
-    }()
-    
-    static var sample: () throws -> ModelContainer = {
-        let schema = Schema([Trip.self])
-        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: schema, configurations: [configuration])
-        Task { @MainActor in
-            insertSampleData(modelContext: container.mainContext)
-        }
-        return container
-    }
-    
-    static func insertSampleData(modelContext: ModelContext) {
-        
+class DataGeneration {
+    static func generateData(modelContext: ModelContext) {
         modelContext.insert(Trip.bedminsterToBeijing)
         modelContext.insert(Trip.mountains)
         
@@ -82,7 +55,7 @@ struct PreviewContainer {
         Step.didcotStation.placemark = Placemark.didcotStation
         Step.readingStation.placemark = Placemark.readingStation
         Step.paddingtonStation.placemark = Placemark.paddingtonStation
-    
+        
+        print("Data generated")
     }
 }
-

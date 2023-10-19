@@ -101,12 +101,11 @@ struct TripActivity: View {
 }
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Trip) in
         GeometryReader { geometry in
             NavigationStack {
                 TripActivity(trip: .bedminsterToBeijing, viewSize: geometry.size, mapActivityID: .constant(Trip.bedminsterToBeijing.persistentModelID))
             }
         }
-        
     }
 }

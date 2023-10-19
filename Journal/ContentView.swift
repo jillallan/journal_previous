@@ -29,7 +29,6 @@ struct ContentView: View {
 
 
 #Preview {
-    ModelContainerPreview(PreviewContainer.sample) {
-        ContentView()
-    }
+    ContentView()
+        .journalDataContainer()
 }

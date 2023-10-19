@@ -75,7 +75,7 @@ struct VisitEditor: View {
 }
 
 #Preview("Edit visit") {
-    ModelContainerPreview(PreviewContainer.sample) {
+    ModelPreview { (model: Activity) in
         let visit = Activity.templeMeads
         
         VisitEditor(
