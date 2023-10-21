@@ -44,7 +44,7 @@ class Trip {
     }
     
     // MARK: - Initialization
-    init(title: String, startDate: Date, endDate: Date) {
+    init(title: String = "New Trip", startDate: Date = .now, endDate: Date = .now) {
         self.title = title
         self.startDate = startDate
         self.endDate = endDate

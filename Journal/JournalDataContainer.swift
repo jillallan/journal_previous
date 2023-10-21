@@ -33,15 +33,14 @@ extension JournalDataContainer: ViewModifier {
     }
 }
 
-
-// TODO: Move to own file
 struct GenerateDataViewModifier: ViewModifier {
     @Environment(\.modelContext) private var modelContext
     
     func body(content: Content) -> some View {
         content
             .onAppear {
-                DataGeneration.generateData(modelContext: modelContext)
+                SampleGeneration.generateData(modelContext: modelContext)
             }
     }
 }
+

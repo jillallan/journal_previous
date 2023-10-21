@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-class DataGeneration {
+class SampleGeneration {
     static func generateData(modelContext: ModelContext) {
         modelContext.insert(Trip.bedminsterToBeijing)
         modelContext.insert(Trip.mountains)

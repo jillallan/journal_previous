@@ -20,14 +20,13 @@ struct TripView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.sceneSize) private var screenSize
-    @State var isTripEditorPresented: Bool = false
+    @State var isAddTripViewPresented: Bool = false
+    @State var navPath = NavigationPath()
+  
     
     var body: some View {
-        let _ = logger.debug("horizontal size class: \(String(describing: horizontalSizeClass))")
-        let _ = logger.debug("vertical size class: \(String(describing: verticalSizeClass))")
-        let _ = logger.debug("scree size: \(String(describing: screenSize))")
         
-        NavigationStack {
+        NavigationStack(path: $navPath) {
             ScrollView {
                 LazyVStack {
                     ForEach(trips) { trip in
@@ -40,52 +39,36 @@ struct TripView: View {
             }
             .safeAreaPadding(20)
             .navigationTitle("Trips")
+#if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+#endif
             .navigationDestination(for: Trip.self) { trip in
                 TripDetailView(trip: trip)
             }
-            
-                        .sheet(isPresented: $isTripEditorPresented) {
-     
-                        }
-                        .toolbar {
-            #if os(macOS)
-                            ToolbarItem {
-                                Button {
-                                    isTripEditorPresented.toggle()
-                                    
-                                } label: {
-                                    Label("Add trip", systemImage: "plus")
-                                }
-                            }
-            #endif
-            #if os(iOS)
-                            ToolbarItem(placement: .topBarTrailing) {
-                                Button {
-                                    isTripEditorPresented.toggle()
-                                    
-                                } label: {
-                                    Label("Add trip", systemImage: "plus")
-                                }
-                            }
-            #endif
-                        }
+            .sheet(isPresented: $isAddTripViewPresented) {
+                AddTripView(navigationPath: $navPath)
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        isAddTripViewPresented.toggle()
+                    } label: {
+                        Label("Add trip", systemImage: "plus")
+                    }
+                }
+                ToolbarItem {
+                    Button("Samples") {
+                        createData()
+                    }
+                }
+            }
         }
-//        .task {
-//            if trips.isEmpty {
-//                PreviewContainer.insertSampleData(modelContext: modelContext)
-//            }
-//        }
+    }
+    
+    func createData() {
+        SampleGeneration.generateData(modelContext: modelContext)
     }
 }
-
-//#Preview("Old") {
-//    ModelContainerPreview(PreviewContainer.sample) {
-//        NavigationStack {
-//            TripView()
-//        }
-//    }
-//}
 
 #Preview("New") {
     NavigationStack {

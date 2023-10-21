@@ -16,10 +16,11 @@ struct TripCard: View {
             .scaledToFill()
             .overlay {
                 VStack {
-                    Text(trip.startDate.formatted(date: .abbreviated, time: .shortened))
                     Text(trip.title)
+                        .font(.largeTitle)
+                    Text(trip.startDate.formatted(date: .abbreviated, time: .omitted))
+                        .font(.subheadline)
                 }
-                .font(.largeTitle)
                 .foregroundStyle(.white)
             }
     }

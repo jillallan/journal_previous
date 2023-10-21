@@ -10,7 +10,6 @@ import XCTest
 @testable import Journal
 
 final class JournalDataContainerTests: DataBaseTestCase {
-//    var container: MockJournalDataContainer!
 
     override func setUpWithError() throws {
         try super.setUpWithError()

@@ -11,7 +11,7 @@ import SwiftData
 
 struct MockJournalDataContainer {
     let container: ModelContainer
-    var dataGeneration: DataGeneration.Type = DataGeneration.self
+    var dataGeneration: SampleGeneration.Type = SampleGeneration.self
     
     init(inMemory: Bool) {
         do {

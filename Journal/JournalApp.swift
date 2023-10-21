@@ -26,19 +26,15 @@ struct JournalApp: App {
     
     
     var body: some Scene {
-        let _ = print("Enable testing: \(CommandLine.arguments.contains("enable-testing"))")
-        let _ = print("Enable testing: \(CommandLine.arguments)")
+        let journalContainer = JournalDataContainer(inMemory: inMemory)
+        
         WindowGroup {
             GeometryReader { geometry in
                 ContentView()
-                    .if(createContainer) { view in
-                        view
-                            .journalDataContainer(inMemory: inMemory)
-                    }
-//                    .journalDataContainer(inMemory: inMemory, generateData: generateData)
                     .environment(\.sceneSize, geometry.size)
                     .environment(\.sceneAspectRatio, geometry.size.width / geometry.size.height)
             }
         }
+        .modelContainer(journalContainer.container)
     }
 }

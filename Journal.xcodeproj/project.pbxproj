@@ -12,6 +12,8 @@
 		780A805E2AB7A26C00443302 /* VisitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805D2AB7A26C00443302 /* VisitCard.swift */; };
 		780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A805F2AB7A2F700443302 /* JourneyCard.swift */; };
 		782A1F902AE1BF10007B6925 /* StepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A1F8F2AE1BF10007B6925 /* StepTests.swift */; };
+		782A1F982AE1CA2D007B6925 /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A1F972AE1CA2D007B6925 /* JournalUITests.swift */; };
+		782A1F9A2AE1CA2D007B6925 /* JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A1F992AE1CA2D007B6925 /* JournalUITestsLaunchTests.swift */; };
 		78438FA72ACDE59C0037CDB4 /* PlacemarkDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */; };
 		78438FAB2ACDEDF60037CDB4 /* MockPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FAA2ACDEDF60037CDB4 /* MockPlacemark.swift */; };
 		78438FAD2ACDF1380037CDB4 /* PlacemarkDescribableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78438FAC2ACDF1380037CDB4 /* PlacemarkDescribableTests.swift */; };
@@ -26,6 +28,11 @@
 		7863D44C2AD991A3004E963C /* MKCoordinateSpan+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D44B2AD991A3004E963C /* MKCoordinateSpan+Extension.swift */; };
 		7863D44E2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D44D2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift */; };
 		7863D4522AD9C98C004E963C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4512AD9C98C004E963C /* TripTests.swift */; };
+		787791632AE27C1F00B8A243 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787791622AE27C1F00B8A243 /* AddTripView.swift */; };
+		787791642AE2B7C700B8A243 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D43B2AD6884E004E963C /* Date+Extension.swift */; };
+		787791652AE2BA2700B8A243 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A7D12AB78EE40087172B /* DateFormatter+Extension.swift */; };
+		787791672AE2BEFB00B8A243 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787791662AE2BEFB00B8A243 /* CalendarPicker.swift */; };
+		787791682AE2C0CA00B8A243 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863D4412AD96913004E963C /* String+Extension.swift */; };
 		789842D72AB8E6F30037CFFF /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */; };
 		789842DC2AB9C0200037CFFF /* TripMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DB2AB9C0200037CFFF /* TripMap.swift */; };
 		789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789842DF2ABA2C670037CFFF /* VisitEditor.swift */; };
@@ -65,10 +72,17 @@
 		78EEF8202AB86F930009D3DD /* JourneyStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */; };
 		78EEF8222AB872FA0009D3DD /* TripActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EEF8212AB872FA0009D3DD /* TripActivity.swift */; };
 		78F451E32ACAE7C4000CD2FF /* JournalDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F451E22ACAE7C4000CD2FF /* JournalDataContainer.swift */; };
-		78F451E72ACAEE18000CD2FF /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F451E62ACAEE18000CD2FF /* DataGeneration.swift */; };
+		78F451E72ACAEE18000CD2FF /* SampleGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F451E62ACAEE18000CD2FF /* SampleGeneration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		782A1F9B2AE1CA2D007B6925 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78D1A7B72AB78ED30087172B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78D1A7BE2AB78ED30087172B;
+			remoteInfo = Journal;
+		};
 		78A97E4C2ACA0BD9000B04C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78D1A7B72AB78ED30087172B /* Project object */;
@@ -84,6 +98,9 @@
 		780A805D2AB7A26C00443302 /* VisitCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCard.swift; sourceTree = "<group>"; };
 		780A805F2AB7A2F700443302 /* JourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCard.swift; sourceTree = "<group>"; };
 		782A1F8F2AE1BF10007B6925 /* StepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTests.swift; sourceTree = "<group>"; };
+		782A1F952AE1CA2D007B6925 /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		782A1F972AE1CA2D007B6925 /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
+		782A1F992AE1CA2D007B6925 /* JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78438FA62ACDE59C0037CDB4 /* PlacemarkDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkDescribable.swift; sourceTree = "<group>"; };
 		78438FAA2ACDEDF60037CDB4 /* MockPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlacemark.swift; sourceTree = "<group>"; };
 		78438FAC2ACDF1380037CDB4 /* PlacemarkDescribableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkDescribableTests.swift; sourceTree = "<group>"; };
@@ -98,6 +115,8 @@
 		7863D44B2AD991A3004E963C /* MKCoordinateSpan+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateSpan+Extension.swift"; sourceTree = "<group>"; };
 		7863D44D2AD991DD004E963C /* MKCoordinateSpanExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateSpanExtensionTests.swift; sourceTree = "<group>"; };
 		7863D4512AD9C98C004E963C /* TripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTests.swift; sourceTree = "<group>"; };
+		787791622AE27C1F00B8A243 /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
+		787791662AE2BEFB00B8A243 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
 		789842D62AB8E6F30037CFFF /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		789842DB2AB9C0200037CFFF /* TripMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMap.swift; sourceTree = "<group>"; };
 		789842DF2ABA2C670037CFFF /* VisitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitEditor.swift; sourceTree = "<group>"; };
@@ -140,10 +159,17 @@
 		78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyStepRow.swift; sourceTree = "<group>"; };
 		78EEF8212AB872FA0009D3DD /* TripActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripActivity.swift; sourceTree = "<group>"; };
 		78F451E22ACAE7C4000CD2FF /* JournalDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDataContainer.swift; sourceTree = "<group>"; };
-		78F451E62ACAEE18000CD2FF /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
+		78F451E62ACAEE18000CD2FF /* SampleGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGeneration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		782A1F922AE1CA2D007B6925 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78A97E452ACA0BD9000B04C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +229,16 @@
 				78EEF81F2AB86F930009D3DD /* JourneyStepRow.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		782A1F962AE1CA2D007B6925 /* JournalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				782A1F972AE1CA2D007B6925 /* JournalUITests.swift */,
+				787791662AE2BEFB00B8A243 /* CalendarPicker.swift */,
+				782A1F992AE1CA2D007B6925 /* JournalUITestsLaunchTests.swift */,
+			);
+			path = JournalUITests;
 			sourceTree = "<group>";
 		};
 		78438FAE2ACDF9B70037CDB4 /* Mocks */ = {
@@ -266,6 +302,7 @@
 				789842DB2AB9C0200037CFFF /* TripMap.swift */,
 				78EEF8212AB872FA0009D3DD /* TripActivity.swift */,
 				780A805B2AB7A1A200443302 /* TripCard.swift */,
+				787791622AE27C1F00B8A243 /* AddTripView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -319,6 +356,7 @@
 			children = (
 				78D1A7C12AB78ED30087172B /* Journal */,
 				78A97E492ACA0BD9000B04C3 /* JournalTests */,
+				782A1F962AE1CA2D007B6925 /* JournalUITests */,
 				78D1A7C02AB78ED30087172B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -328,6 +366,7 @@
 			children = (
 				78D1A7BF2AB78ED30087172B /* Journal.app */,
 				78A97E482ACA0BD9000B04C3 /* JournalTests.xctest */,
+				782A1F952AE1CA2D007B6925 /* JournalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,7 +388,7 @@
 				780A80582AB7A0D200443302 /* Views */,
 				78F451E22ACAE7C4000CD2FF /* JournalDataContainer.swift */,
 				7851E1022ACB4E370039D33B /* ModelPreview.swift */,
-				78F451E62ACAEE18000CD2FF /* DataGeneration.swift */,
+				78F451E62ACAEE18000CD2FF /* SampleGeneration.swift */,
 				78D1A7C62AB78ED50087172B /* Assets.xcassets */,
 				78D1A7C82AB78ED50087172B /* Journal.entitlements */,
 				78D1A7C92AB78ED50087172B /* Preview Content */,
@@ -368,6 +407,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		782A1F942AE1CA2D007B6925 /* JournalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 782A1FA02AE1CA2D007B6925 /* Build configuration list for PBXNativeTarget "JournalUITests" */;
+			buildPhases = (
+				782A1F912AE1CA2D007B6925 /* Sources */,
+				782A1F922AE1CA2D007B6925 /* Frameworks */,
+				782A1F932AE1CA2D007B6925 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				782A1F9C2AE1CA2D007B6925 /* PBXTargetDependency */,
+			);
+			name = JournalUITests;
+			productName = JournalUITests;
+			productReference = 782A1F952AE1CA2D007B6925 /* JournalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		78A97E472ACA0BD9000B04C3 /* JournalTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78A97E502ACA0BD9000B04C3 /* Build configuration list for PBXNativeTarget "JournalTests" */;
@@ -413,6 +470,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					782A1F942AE1CA2D007B6925 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 78D1A7BE2AB78ED30087172B;
+					};
 					78A97E472ACA0BD9000B04C3 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 78D1A7BE2AB78ED30087172B;
@@ -437,11 +498,19 @@
 			targets = (
 				78D1A7BE2AB78ED30087172B /* Journal */,
 				78A97E472ACA0BD9000B04C3 /* JournalTests */,
+				782A1F942AE1CA2D007B6925 /* JournalUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		782A1F932AE1CA2D007B6925 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78A97E462ACA0BD9000B04C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +530,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		782A1F912AE1CA2D007B6925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782A1F9A2AE1CA2D007B6925 /* JournalUITestsLaunchTests.swift in Sources */,
+				782A1F982AE1CA2D007B6925 /* JournalUITests.swift in Sources */,
+				787791672AE2BEFB00B8A243 /* CalendarPicker.swift in Sources */,
+				787791652AE2BA2700B8A243 /* DateFormatter+Extension.swift in Sources */,
+				787791682AE2C0CA00B8A243 /* String+Extension.swift in Sources */,
+				787791642AE2B7C700B8A243 /* Date+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78A97E442ACA0BD9000B04C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,7 +570,7 @@
 				78438FA72ACDE59C0037CDB4 /* PlacemarkDescribable.swift in Sources */,
 				7863D4482AD98DA3004E963C /* Double+Extension.swift in Sources */,
 				78F451E32ACAE7C4000CD2FF /* JournalDataContainer.swift in Sources */,
-				78F451E72ACAEE18000CD2FF /* DataGeneration.swift in Sources */,
+				78F451E72ACAEE18000CD2FF /* SampleGeneration.swift in Sources */,
 				78D1A7DE2AB790690087172B /* TripView.swift in Sources */,
 				789842E02ABA2C670037CFFF /* VisitEditor.swift in Sources */,
 				780A80602AB7A2F700443302 /* JourneyCard.swift in Sources */,
@@ -507,6 +589,7 @@
 				78DE0CD72AC74A25003A61FC /* DetailView.swift in Sources */,
 				78DE0CD12AC714DB003A61FC /* ActivityCard.swift in Sources */,
 				78D1A7C32AB78ED30087172B /* JournalApp.swift in Sources */,
+				787791632AE27C1F00B8A243 /* AddTripView.swift in Sources */,
 				7863D4422AD96913004E963C /* String+Extension.swift in Sources */,
 				7863D43C2AD6884E004E963C /* Date+Extension.swift in Sources */,
 				78A97E362AC8565E000B04C3 /* StepsList.swift in Sources */,
@@ -535,6 +618,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		782A1F9C2AE1CA2D007B6925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78D1A7BE2AB78ED30087172B /* Journal */;
+			targetProxy = 782A1F9B2AE1CA2D007B6925 /* PBXContainerItemProxy */;
+		};
 		78A97E4D2ACA0BD9000B04C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78D1A7BE2AB78ED30087172B /* Journal */;
@@ -543,6 +631,65 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		782A1F9D2AE1CA2D007B6925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UJT6W9JA72;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jillallan.JournalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Journal;
+			};
+			name = Debug;
+		};
+		782A1F9E2AE1CA2D007B6925 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UJT6W9JA72;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jillallan.JournalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Journal;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Test;
+		};
+		782A1F9F2AE1CA2D007B6925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UJT6W9JA72;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jillallan.JournalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Journal;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		7863D4532ADC7F8A004E963C /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -899,6 +1046,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		782A1FA02AE1CA2D007B6925 /* Build configuration list for PBXNativeTarget "JournalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				782A1F9D2AE1CA2D007B6925 /* Debug */,
+				782A1F9E2AE1CA2D007B6925 /* Test */,
+				782A1F9F2AE1CA2D007B6925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		78A97E502ACA0BD9000B04C3 /* Build configuration list for PBXNativeTarget "JournalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
